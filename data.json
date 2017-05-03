@@ -1,0 +1,378 @@
+{
+  "goodsDetails": {
+    "goods_id": 1,
+    "name": "粥品香坊（回龙观）",
+    "max_price": 50,
+    "price": 38,
+    "sale_num": 500,
+    "wximgs": [
+      {
+        "img": "http://pic.qiantucdn.com/58pic/14/59/28/74A58PICIrd_1024.jpg"
+      },
+      {
+        "img": "http://pic.qiantucdn.com/58pic/23/12/64/92G58PIC93T_1024.jpg"
+      },
+      {
+        "img": "http://pic.qiantucdn.com/58pic/25/94/22/94558PICxJ3_1024.jpg"
+      }
+    ],
+    "models": [
+      {
+        "model_id": 1,
+        "name": "长款绿色xxl码",
+        "price": 40,
+        "stock": 100
+      },
+      {
+        "model_id": 2,
+        "name": "中长款红色s码",
+        "price": 38,
+        "stock": 200
+      },
+      {
+        "model_id": 3,
+        "name": "长款黑色xl码",
+        "price": 50,
+        "stock": 300
+      },
+      {
+        "model_id": 4,
+        "name": "短款绿色M码",
+        "price": 45,
+        "stock": 400
+      }
+    ],
+    "evaluate": [
+      {
+        "img": "http://pic.qiantucdn.com/58pic/14/59/28/74A58PICIrd_1024.jpg",
+        "name": "这是叶某某啊",
+        "model": "中长款红色s码",
+        "eva_time": "2017-4-26",
+        "eva_content": "短发女人也可以性感和可爱，人山又人海别错过那一个等待",
+        "eva_mark": 5,
+        "ishide": 0
+      },
+      {
+        "img": "http://pic.qiantucdn.com/58pic/23/12/64/92G58PIC93T_1024.jpg",
+        "name": "这是叶某某啊",
+        "model": "中长款红色s码",
+        "eva_time": "2017-4-26",
+        "eva_content": "短发女人也可以性感和可爱，人山又人海别错过那一个等待",
+        "eva_mark": 5,
+        "ishide": 1
+      },
+      {
+        "img": "http://pic.qiantucdn.com/58pic/14/59/28/74A58PICIrd_1024.jpg",
+        "name": "这是叶某某啊",
+        "model": "中长款红色s码",
+        "eva_time": "2017-4-26",
+        "eva_content": "短发女人也可以性感和可爱，人山又人海别错过那一个等待",
+        "eva_mark": 5,
+        "ishide": 0
+      }
+    ],
+    "desc": "打飞机打卡机发就发了打开房间阿里打开房间啊快递费敬爱的司法鉴定打发打发考虑对方就爱看电视剧发的说法，发的发的发达，发大水发大水发多发发，阀打开房间啊快点放",
+    "detailimgs": [
+      "http://pic.qiantucdn.com/58pic/14/59/28/74A58PICIrd_1024.jpg",
+      "http://pic.qiantucdn.com/58pic/23/12/64/92G58PIC93T_1024.jpg",
+      "http://pic.qiantucdn.com/58pic/25/94/22/94558PICxJ3_1024.jpg"
+    ],
+    "store_id": 1,
+    "tel": "13251235456",
+    "trolley": 0
+  },
+  "goodsOrderList": [
+    {
+      "store_name": "anta安凯专卖店",
+      "store_id": "1",
+      "state": "已下单",
+      "goods": [
+        {
+          "goods_id": "1",
+          "img": "http://pic.qiantucdn.com/58pic/14/59/28/74A58PICIrd_1024.jpg",
+          "name": "安踏女鞋 跑步鞋春季2017新款正品轻便韩版",
+          "property": "白色37.5",
+          "num": 1,
+          "price": 1590
+        },
+        {
+          "goods_id": "2",
+          "img": "http://pic.qiantucdn.com/58pic/23/12/64/92G58PIC93T_1024.jpg",
+          "name": "李宁足球真皮脚感5号4号3号儿童桑巴荣耀",
+          "property": "5号球蓝色中国风啊",
+          "num": 2,
+          "price": 1590
+        }
+      ],
+      "totalprice": 3232
+    },
+    {
+      "store_name": "哈哈小伙子专卖店",
+      "store_id": "2",
+      "state": "已确认",
+      "goods": [
+        {
+          "goods_id": "3",
+          "img": "http://pic.qiantucdn.com/58pic/14/59/28/74A58PICIrd_1024.jpg",
+          "name": "安踏女鞋 跑步鞋春季2017新款正品轻便韩",
+          "property": "白色37.5",
+          "num": 1,
+          "price": 1590
+        },
+        {
+          "goods_id": "4",
+          "img": "http://pic.qiantucdn.com/58pic/23/12/64/92G58PIC93T_1024.jpg",
+          "name": "李宁足球真皮脚感5号4号3号儿童桑巴荣耀",
+          "property": "5号球蓝色中国风",
+          "num": 2,
+          "price": 1590
+        }
+      ],
+      "totalprice": 3232
+    },
+    {
+      "store_name": "哈哈小伙子专卖店",
+      "store_id": "3",
+      "state": "已支付",
+      "goods": [
+        {
+          "goods_id": "5",
+          "img": "http://pic.qiantucdn.com/58pic/14/59/28/74A58PICIrd_1024.jpg",
+          "name": "安踏女鞋 跑步鞋春季2017新款正品轻便韩",
+          "property": "白色37.5",
+          "num": 1,
+          "price": 1590
+        },
+        {
+          "goods_id": "6",
+          "img": "http://pic.qiantucdn.com/58pic/23/12/64/92G58PIC93T_1024.jpg",
+          "name": "李宁足球真皮脚感5号4号3号儿童桑巴荣耀",
+          "property": "5号球蓝色中国风",
+          "num": 2,
+          "price": 1590
+        }
+      ],
+      "totalprice": 3232
+    },
+    {
+      "store_name": "哈哈小伙子专卖店",
+      "store_id": "4",
+      "state": "已发货",
+      "goods": [
+        {
+          "goods_id": "7",
+          "img": "http://pic.qiantucdn.com/58pic/14/59/28/74A58PICIrd_1024.jpg",
+          "name": "安踏女鞋 跑步鞋春季2017新款正品轻便韩",
+          "property": "白色37.5",
+          "num": 1,
+          "price": 1590
+        },
+        {
+          "goods_id": "8",
+          "img": "http://pic.qiantucdn.com/58pic/23/12/64/92G58PIC93T_1024.jpg",
+          "name": "李宁足球真皮脚感5号4号3号儿童桑巴荣耀",
+          "property": "5号球蓝色中国风",
+          "num": 2,
+          "price": 1590
+        }
+      ],
+      "totalprice": 3232
+    },
+    {
+      "store_name": "哈哈小伙子专卖店",
+      "store_id": "5",
+      "state": "已收货",
+      "goods": [
+        {
+          "goods_id": "9",
+          "img": "http://pic.qiantucdn.com/58pic/14/59/28/74A58PICIrd_1024.jpg",
+          "name": "安踏女鞋 跑步鞋春季2017新款正品轻便韩",
+          "property": "白色37.5",
+          "num": 1,
+          "price": 1590
+        },
+        {
+          "goods_id": "10",
+          "img": "http://pic.qiantucdn.com/58pic/23/12/64/92G58PIC93T_1024.jpg",
+          "name": "李宁足球真皮脚感5号4号3号儿童桑巴荣耀",
+          "property": "5号球蓝色中国风",
+          "num": 2,
+          "price": 1590
+        }
+      ],
+      "totalprice": 3232
+    },
+    {
+      "store_name": "哈哈小伙子专卖店",
+      "store_id": "6",
+      "state": "已完成",
+      "show": "1",
+      "goods": [
+        {
+          "goods_id": "11",
+          "img": "http://pic.qiantucdn.com/58pic/14/59/28/74A58PICIrd_1024.jpg",
+          "name": "安踏女鞋 跑步鞋春季2017新款正品轻便韩",
+          "property": "白色37.5",
+          "num": 1,
+          "price": 1590
+        },
+        {
+          "goods_id": "12",
+          "img": "http://pic.qiantucdn.com/58pic/23/12/64/92G58PIC93T_1024.jpg",
+          "name": "李宁足球真皮脚感5号4号3号儿童桑巴荣耀",
+          "property": "5号球蓝色中国风",
+          "num": 2,
+          "price": 1590
+        }
+      ],
+      "totalprice": 3232
+    }
+  ],
+  "goodsOrder": {
+    "store_name": "anta安凯专卖店",
+    "store_id": "1",
+    "buyer_name": "张三",
+    "buyer_tel": "18216487165",
+    "buyer_address": "雍江艺庭2栋2001房",
+    "express_company": "顺丰速运",
+    "express_no": "1234564879787897",
+    "state": "已收货",
+    "goods": [
+      {
+        "goods_id": "1",
+        "img": "http://pic.qiantucdn.com/58pic/14/59/28/74A58PICIrd_1024.jpg",
+        "name": "安踏女鞋 跑步鞋春季2017新款正品轻便韩版",
+        "model_id": "白色37.5",
+        "model_name": "白色xxl",
+        "num": 1,
+        "price": 1590
+      },
+      {
+        "goods_id": "2",
+        "img": "http://pic.qiantucdn.com/58pic/23/12/64/92G58PIC93T_1024.jpg",
+        "name": "李宁足球真皮脚感5号4号3号儿童桑巴荣耀",
+        "model_id": "白色37.5",
+        "model_name": "白色xxl",
+        "num": 1,
+        "price": 1590
+      }
+    ]
+  },
+  "goodsIndex": {
+    "status": 0,
+    "error_reason": "执行成功",
+    "totalpage": 2,
+    "fields": {
+      "goodsList": [
+        {
+          "goods_id": 3,
+          "img": "http://192.168.1.19/o2o-shopkeeper-web/uploadtrademark/bdcf18de-4e51-4227-9ade-da89954d7a6c.png",
+          "name": "短袖衬衫",
+          "price": 896.00,
+          "max_price": 0,
+          "sale_num": 0,
+          "store_id": 1,
+          "store_name": "周黑鸭打呵呵",
+          "tel": "",
+          "imgs": [],
+          "models": [],
+          "evaluate": [],
+          "desc": null,
+          "detailimgs": [],
+          "wximgs": [],
+          "trolley": 0
+        },
+        {
+          "goods_id": 5,
+          "img": "http://192.168.1.19/o2o-shopkeeper-web/uploadtrademark/4540a2de-3406-45c6-8dbc-53f4d1f37d88.jpg",
+          "name": "绿茶护肤水",
+          "price": 653.00,
+          "max_price": 0,
+          "sale_num": 0,
+          "store_id": 9,
+          "store_name": "天天快递",
+          "tel": "",
+          "imgs": [],
+          "models": [],
+          "evaluate": [],
+          "desc": null,
+          "detailimgs": [],
+          "wximgs": [],
+          "trolley": 0
+        },
+        {
+          "goods_id": 2,
+          "img": "http://192.168.1.19/o2o-shopkeeper-web/uploadtrademark/74aaf2bf-6b96-4810-9a34-71512011569f.png",
+          "name": "巴黎欧莱雅",
+          "price": 236.00,
+          "max_price": 0,
+          "sale_num": 0,
+          "store_id": 1,
+          "store_name": "周黑鸭打呵呵",
+          "tel": "",
+          "imgs": [],
+          "models": [],
+          "evaluate": [],
+          "desc": null,
+          "detailimgs": [],
+          "wximgs": [],
+          "trolley": 0
+        },
+        {
+          "goods_id": 4,
+          "img": "http://192.168.1.19/o2o-shopkeeper-web/uploadtrademark/055a159f-a1e2-4304-b8bf-bf66959147eb.jpg",
+          "name": "长袖外套",
+          "price": 178.00,
+          "max_price": 0,
+          "sale_num": 0,
+          "store_id": 9,
+          "store_name": "天天快递",
+          "tel": "",
+          "imgs": [],
+          "models": [],
+          "evaluate": [],
+          "desc": null,
+          "detailimgs": [],
+          "wximgs": [],
+          "trolley": 0
+        }
+      ],
+      "sort": [
+        {
+          "value": "综和",
+          "key": 1
+        },
+        {
+          "value": "价格从高到低",
+          "key": 2
+        },
+        {
+          "value": "价格从低到高",
+          "key": 3
+        },
+        {
+          "value": "销量从高到低",
+          "key": 4
+        }
+      ],
+      "rack": [
+        {
+          "key": 2,
+          "value": "服装类"
+        },
+        {
+          "key": 3,
+          "value": "饮食类"
+        },
+        {
+          "key": 4,
+          "value": "护肤类"
+        },
+        {
+          "key": null,
+          "value": "全部"
+        }
+      ]
+    }
+  }
+}

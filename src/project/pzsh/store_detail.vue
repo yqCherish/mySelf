@@ -112,7 +112,7 @@
               "pagesize":this.pagesize,
               "sort":this.current_sort_key,
               "rack":this.current_rack_key,
-              "store_id":this.store_id
+              "storeid":this.store_id
             }
           };
           this.$http.post(service_url+'/o2o/shop/wx/store/indexinfo.do',senddata).then( (data)=> {

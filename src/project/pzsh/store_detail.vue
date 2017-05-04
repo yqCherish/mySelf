@@ -115,7 +115,7 @@
               "store_id":this.store_id
             }
           };
-          this.$http.post(service_url+'/o2o/shop/wx/indexinfo.do',senddata).then( (data)=> {
+          this.$http.post(service_url+'/o2o/shop/wx/store/indexinfo.do',senddata).then( (data)=> {
             /*if(mark){
               let goodsList = data.body.fields.goodsList;
               for(let i =0;i<goodsList.length;i++){

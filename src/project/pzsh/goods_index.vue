@@ -103,6 +103,7 @@
       Swiper,Search,goodslist,Selector, Group,Actionsheet,Scroller,Loading
     },
     mounted(){
+      this.setTitle("商品首页");
       this.getlist();
     },
     methods: {
@@ -116,8 +117,8 @@
             "rack":this.current_rack_key
           }
         };
-        /*this.$http.post(service_url+'/o2o/shop/wx/indexinfo.do',senddata).then( (data)=> {
-          /!*if(mark){
+        this.$http.post(service_url+'/o2o/shop/wx/indexinfo.do',senddata).then( (data)=> {
+          /*if(mark){
            let goodsList = data.body.fields.goodsList;
            for(let i =0;i<goodsList.length;i++){
            self.goodsItem.push(goodsList[i]);
@@ -125,13 +126,13 @@
 
            }else{
            self.goodsItem=data.body.fields.goodsList;
-           }*!/
+           }*/
           self.totalpage=data.body.totalpage;
-          /!*if(self.totalpage===1){
+          if(self.totalpage===1){
             this.$el.querySelector('.load-more').style.display = 'none';
           }else{
             this.$el.querySelector('.load-more').style.display = 'block';
-          }*!/
+          }
           self.goodsItem=data.body.fields.goodsList;
 
           let arr_sort=data.body.fields.sort;
@@ -152,10 +153,10 @@
 
         },()=>{
           console.log(2);
-        });*/
+        });
 
 
-        this.$http.get('/api/goodsIndex').then((data) => {
+        /*this.$http.get('/api/goodsIndex').then((data) => {
           self.totalpage=data.body.data.totalpage;
           self.goodsItem=data.body.data.fields.goodsList;
           let arr_sort=data.body.data.fields.sort;
@@ -176,7 +177,7 @@
 
          }, () => {
          console.log(2);
-         });
+         });*/
         this.loading=false;
       },
       demo06_onIndexChange (index) {
@@ -238,21 +239,21 @@
           this.$el.querySelector('.load-more').style.display = 'none';
           return;
         }else{
-          /*this.$http.post(service_url+'/o2o/shop/wx/indexinfo.do',senddata).then( (data)=> {
+          this.$http.post(service_url+'/o2o/shop/wx/indexinfo.do',senddata).then( (data)=> {
             self.totalpage=data.body.totalpage;
             let goodsList = data.body.fields.goodsList;
             for(let i =0;i<goodsList.length;i++){
               self.goodsItem.push(goodsList[i]);
             }
             done();
-          })*/
-          this.$http.get('/api/goodsIndex').then((data) => {
+          })
+          /*this.$http.get('/api/goodsIndex').then((data) => {
             self.totalpage = data.body.data.totalpage;
             let goodsList = data.body.data.fields.goodsList;
             for(let i =0;i<goodsList.length;i++){
               self.goodsItem.push(goodsList[i]);
             }
-          })
+          })*/
         }
       },
       onRefresh(done) {
@@ -262,6 +263,18 @@
 
         done() // call done
       },
+      setTitle(t){
+        document.title = t;
+        var i = document.createElement('iframe');
+        i.src = '//m.baidu.com/favicon.ico';
+        i.style.display = 'none';
+        i.onload = function() {
+          setTimeout(function(){
+            i.remove();
+          }, 9)
+        };
+        document.body.appendChild(i);
+      }
     },
 
   }

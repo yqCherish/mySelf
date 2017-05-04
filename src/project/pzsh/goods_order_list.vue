@@ -10,8 +10,8 @@
             <div class="text-right">共{{goods_num}}件商品 合计：￥{{goods_price}}</div>
             <div v-if="item.this_state==='已确认'" class="text-right"><x-button mini plain @click.native="goToPay(item.ordernum)">去支付</x-button></div>
             <div v-if="item.this_state==='已发货'" class="text-right"><x-button mini plain @click.native="checkGoodsIn(item.ordernum)">确认收货</x-button></div>
-            <div v-if="item.this_state==='已收货'" class="text-right"><x-button mini plain @click.native="goToEva">去评价</x-button></div>
-            <div v-if="item.this_state==='已评价'" class="text-right"><x-button mini plain @click.native="seeEva">查看评价</x-button></div>
+            <div v-if="item.this_state==='已收货'" class="text-right"><x-button mini plain @click.native="goToEva(item.ordernum)">去评价</x-button></div>
+            <div v-if="item.this_state==='已评价'" class="text-right"><x-button mini plain @click.native="seeEva(item.ordernum)">查看评价</x-button></div>
           </div>
         </group>
       </div>
@@ -89,11 +89,11 @@
           }
         })
       },
-      goToEva(){
-
+      goToEva(ordernum){
+        this.$router.push({ path: '/goods_evaluate',query:{"type":1,"ordernum":ordernum} });
       },
-      seeEva(){
-
+      seeEva(ordernum){
+        this.$router.push({ path: '/goods_evaluate',query:{"type":2,"ordernum":ordernum} });
       },
       switchState(num){
         switch(num){

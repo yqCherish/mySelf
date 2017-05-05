@@ -2,7 +2,7 @@
   <div>
     <Loading v-if="loading"></Loading>
     <Scroller v-else :on-refresh="onRefresh" :on-infinite="onInfinite" style="margin-top:-2em;">
-      <div class="posr" style="max-height:10rem"><img style="opacity:0.4;filter:alpha(opacity=40);width:100%;max-height:10rem" src="./store_bg.jpg"/>
+      <div class="posr" style="max-height:10rem"><img style="opacity:0.4;filter:alpha(opacity=40);width:100%;max-height:10rem" src="http://pic.qiantucdn.com/58pic/25/94/22/94558PICxJ3_1024.jpg"/>
         <div style="position:absolute;bottom:.5rem;left:.5rem">
           <div class="f_flex" style="align-items: center">
             <div style="width:4rem;height:4rem"><img :src="img" style="object-fit: cover;height: 100%;width:100%"/></div>
@@ -11,11 +11,11 @@
         </div>
       </div>
       <div class="weui_flex" style="font-size:14px">
-        <div class="flex_tab f_flex f_ac f_vc">
+        <div class="flex_tab f_flex f_ac f_vc" style="color:#10aeff">
           <div style="padding:5px" @click="showActionsheet2">{{current_rack}}</div>
           <i class="arrow"></i>
         </div>
-        <div class="flex_tab f_flex f_ac f_vc">
+        <div class="flex_tab f_flex f_ac f_vc" style="color:#10aeff">
           <div style="padding:5px" @click="showActionsheet">{{current_sort}}</div>
           <i class="arrow"></i>
         </div>
@@ -34,12 +34,6 @@
   import goodslist from './goods_list.vue'
   import Scroller from '@/components/scroller_me/scroller';
   import Loading from '@/components/loading/dataLoading'
-
-  const baseList = [{
-    url: 'javascript:',
-    img: 'http://pic.qiantucdn.com/58pic/14/59/28/74A58PICIrd_1024.jpg',
-    title: '送你一朵fua'
-  }];
 
   const goodList=[
     {
@@ -69,18 +63,12 @@
     price: item.price,
     sale_num: item.sale_num,
   }));
-  const urlList = baseList.map((item, index) => ({
-    url: 'http://m.baidu.com',
-    img: item.img,
-    title: `(可点击)${item.title}`
-  }));
 
   export default {
     data () {
       return {
         loading:true,
         store_name:'丰诚自营商品自营店',
-        demo06_list: urlList,//轮播图
         demo06_index: 0,
         goodsItem:goodsItem,//商品列表
         current_sort:'默认',

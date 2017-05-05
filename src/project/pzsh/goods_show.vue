@@ -22,8 +22,8 @@
         </template>
         <template v-if="type === '3'">
           <div style="max-height:42px;overflow: hidden">{{item.name}}</div>
-          <div class="color_red font_1_4" style="position:absolute;left:0;bottom:0">￥{{item.price}}</div>
-          <x-button mini plain type="primary" style="font-size:10px;position:absolute;right:0;bottom:0">取消收藏</x-button>
+          <div class="color_red" style="position:absolute;left:0;bottom:0">￥{{item.price}}</div>
+          <x-button mini plain type="primary" style="font-size:10px;position:absolute;right:0;bottom:0" @click.native="onDeleteClick(item.goods_id)">取消收藏</x-button>
         </template>
       </div>
     </div>
@@ -43,6 +43,18 @@
     },
     components: {
       XButton
+    },
+    methods:{
+      onDeleteClick(key){
+        this.emitEvent('on-click-menu', key)
+      },
+      emitEvent (event, menu, shouldClose = true) {
+        if (event === 'on-click-menu' && !/.noop/.test(menu)) {
+          this.$emit(event, menu)
+          this.$emit(`${event}-${menu}`)
+          shouldClose && (this.show = false)
+        }
+      },
     }
   }
 </script>
@@ -109,6 +121,7 @@
   }
 
   .color_red {
+    font-size:20px;
     color: red;
   }
 

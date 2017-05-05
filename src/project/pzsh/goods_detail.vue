@@ -21,7 +21,7 @@
             <div v-if="index==0">
               <div class="tw_detail">
                 <div class="w_detail margin_bottom">
-                  {{desc}}
+                  <pre>{{desc}}</pre>
                 </div>
                 <div><img v-for="item in detailimgs" :src="item" class="object_fit"/></div>
               </div>
@@ -79,7 +79,8 @@
         <div class="weui_flex" style="padding:0;text-align:center;height:44px;">
           <a style="flex:2;border-right:1px solid #ececec;"><router-link :to="{path:'store_detail',query: {store_id:store_id}}"><div style="height: 22px"><img style="height: 25px" src="./店铺.png"/></div><p style="font-size:12px">店铺</p></router-link></a>
           <a :href="'tel:'+tel" style="flex:2;border-right:1px solid #ececec;"><div style="height: 22px"><img style="height: 25px" src="./电话.png"/></div><p style="font-size:12px">电话</p></a>
-          <a style="flex:2;border-right:1px solid #ececec;" @click="collect"><div style="height: 22px"><img style="height: 25px" src="./收藏.png"/></div><p style="font-size:12px">收藏</p></a>
+          <a v-if="trolley===0" style="flex:2;border-right:1px solid #ececec;" @click="collect"><div style="height: 22px"><img style="height: 25px" src="./收藏.png"/></div><p style="font-size:12px">收藏</p></a>
+          <a v-else style="flex:2;border-right:1px solid #ececec;" @click="cancelcollect"><div style="height: 22px"><img style="height: 25px" src="./星星色.png"/></div><p style="font-size:12px">收藏</p></a>
           <a @click="showActionsheet(2)" class="cz_button" style="flex:4;background-color:#f06600;color:white">加入购物车</a>
           <a @click="showActionsheet(1)" class="cz_button" style="flex:4;background-color:#e9582a;color:white">立即下单</a>
         </div>
@@ -132,7 +133,7 @@
         store_id:'',
         goods_id:'',
         tel:'',
-        trolley:'',
+        trolley:0,
         choose_item:'',
         select_price:'',
         select_stock:'',
@@ -225,16 +226,29 @@
           this.click_button=0;
           this.confirm_buy(3);
       },
+      cancelcollect(){
+          let self =this;
+        const collectdata={
+          "data":{
+            goodsid:this.goods_id
+          }
+        };
+        this.$http.post(service_url+'/o2o/shop/wx/deletecollect.do',collectdata).then( (data)=> {
+          alert("取消成功");
+          self.trolley=0;
+        })
+      },
       confirm_buy(num){
           console.log(num);
+          let self =this;
         if(num!==3&&!this.choose_item){
             alert("请选择规格");
         }else{
           const senddata = {
             "data": [{
-                  "goodsid":this.goods_id,
+                  "goods_id":this.goods_id,
                   "modelid":this.model_id,
-                  "counts":this.roundValue,
+                  "num":this.roundValue,
                   "price":this.select_price,
                 }]
           };
@@ -256,26 +270,27 @@
           if(this.click_button===1||num===1){
             this.$http.post(service_url+'/o2o/shop/wx/downorder.do',senddata).then( (data)=> {
 //              this.$router.push({ path: '/store_up',query:{"type":1} });
-              if(data.body.fields.status===0){
+              if(data.body.status===0){
                 alert("下单成功");
               }else{
-                  alert(data.body.fields.error_reason);
+                  alert(data.body.error_reason);
               }
             })
           }else if(this.click_button===2||num===2){
             this.$http.post(service_url+'/o2o/shop/wx/insertcar.do',insertData).then( (data)=> {
-              if(data.body.fields.status===0){
+              if(data.body.status===0){
                 alert("加入购物车成功");
               }else{
-                alert(data.body.fields.error_reason);
+                alert(data.body.error_reason);
               }
             })
           }else if(num===3){
             this.$http.post(service_url+'/o2o/shop/wx/insertcollection.do',collectData).then( (data)=> {
-              if(data.body.fields.status===0){
+              if(data.body.status===0){
+                  self.trolley=1;
                 alert("收藏成功");
               }else{
-                alert(data.body.fields.error_reason);
+                alert(data.body.error_reason);
               }
             })
           }

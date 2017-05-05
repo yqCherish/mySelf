@@ -32,15 +32,15 @@
   const baseList = [{
     url: 'javascript:',
     img: 'http://pic.qiantucdn.com/58pic/14/59/28/74A58PICIrd_1024.jpg',
-    title: '送你一朵fua'
+    title: ''
   }, {
     url: 'javascript:',
     img: 'http://pic.qiantucdn.com/58pic/23/12/64/92G58PIC93T_1024.jpg',
-    title: '送你一辆车'
+    title: ''
   }, {
     url: 'javascript:',
     img: 'http://pic.qiantucdn.com/58pic/25/94/22/94558PICxJ3_1024.jpg',
-    title: '送你一次旅行'
+    title: ''
   }];
 
   const goodList=[
@@ -74,7 +74,7 @@
   const urlList = baseList.map((item, index) => ({
     url: 'http://m.baidu.com',
     img: item.img,
-    title: `(可点击)${item.title}`
+    title: `(图片可点击)${item.title}`
   }));
 
   export default {

@@ -1,36 +1,39 @@
 <template>
   <div>
     <div class="outer_padding">
-      <div class="body_white" style="border-bottom:1px solid #ececec" v-for="order in orders" track-by="$index">
-        <div class="weui_flex border_bottom_2 weui_check_two">
-          <!--checkbox-->
-          <div class="weui-cell__hd weui_check_two" @click="checkboxtwo(order,orders.length)">
-            <input :id="'store'+order.store_id" type="checkbox" class="weui-check" name="checkbox">
-            <i class="weui-icon-checked"></i>
+      <Group>
+        <div class="body_white" style="border-bottom:1px solid #ececec" v-for="order in orders" track-by="$index">
+          <div class="weui_flex border_bottom_2 weui_check_two">
+            <!--checkbox-->
+            <div class="weui-cell__hd weui_check_two" @click="checkboxtwo(order,orders.length)">
+              <input :id="'store'+order.store_id" type="checkbox" class="weui-check" name="checkbox">
+              <i class="weui-icon-checked"></i>
+            </div>
+            <div class="width_30 text_ellipsis">
+              {{order.store_name}}
+            </div>
           </div>
-          <div class="width_30 text_ellipsis">
-            {{order.store_name}}
+          <!--商品区域-->
+          <div class="weui_flex border_bottom_2" v-for="item in order.goods" track-by="$index">
+            <div class="weui-cell__hd weui_check_single" @click="checkboxsingle(item.goods_id,order.goods.length)">
+              <input :id="'goods'+item.goods_id" type="checkbox" class="weui-check" name="checkbox">
+              <i class="weui-icon-checked"></i>
+            </div>
+            <div class="img_div">
+              <img class="object_fit" :src ="item.img"/>
+            </div >
+            <div class="ui_describe flex_1 font_14 posr">
+              <div style="max-height:42px;overflow: hidden">{{item.name}}</div>
+              <div class="text_ellipsis width_13">规格: {{item.property}}</div>
+              <div class="text_ellipsis width_13">数量：<span class="mark_span">X</span><span
+                class="num_span">{{item.num}}</span></div>
+              <div class="color_red" style="position:absolute;left:0;bottom:0"><span class="mark_span">￥</span><span class="price_span" style="font-size:20px;">{{item.price}}</span></div>
+              <x-button mini plain type="primary" style="font-size:10px;position:absolute;right:0;bottom:0" @click.native="removeTodo($index,order.goods,$parent.$index,item.goods_id,item.order_id)">删除商品</x-button>
+            </div>
           </div>
         </div>
-        <!--商品区域-->
-        <div class="weui_flex border_bottom_2" v-for="item in order.goods" track-by="$index">
-          <div class="weui-cell__hd weui_check_single" @click="checkboxsingle(item.goods_id,order.goods.length)">
-            <input :id="'goods'+item.goods_id" type="checkbox" class="weui-check" name="checkbox">
-            <i class="weui-icon-checked"></i>
-          </div>
-          <div class="img_div">
-            <img class="object_fit" :src ="item.img"/>
-          </div >
-          <div class="ui_describe flex_1 font_14 posr">
-            <div style="max-height:42px;overflow: hidden">{{item.name}}</div>
-            <div class="text_ellipsis width_13">规格: {{item.property}}</div>
-            <div class="text_ellipsis width_13">数量：<span class="mark_span">X</span><span
-              class="num_span">{{item.num}}</span></div>
-            <div class="color_red"><span class="mark_span">￥</span><span class="price_span">{{item.price}}</span></div>
-            <x-button mini plain type="primary" style="font-size:10px;position:absolute;right:0;bottom:0" @click="removeTodo($index,order.goods,$parent.$index)">删除商品</x-button>
-          </div>
-        </div>
-      </div>
+      </Group>
+
     </div>
     <div class="fixed_bottom">
       <div class="weui_flex">
@@ -44,22 +47,30 @@
           <span>全选</span>
           <p style="float:right">合计: <span class="color_red"> ￥{{sum}}</span></p>
         </div>
-        <div class="buy_button">结算</div>
+        <div class="buy_button" @click="placeOrder">下单</div>
       </div>
     </div>
   </div>
 </template>
 <script>
-  import {XButton} from 'vux'
+  import {XButton,Group} from 'vux'
   import $ from 'jquery';
   export default{
     mounted(){
       this.order_type = this.$route.query.type;
       let self = this;
-      this.$http.get('/api/goodsOrderList').then((data) => {
+      /*this.$http.get('/api/goodsOrderList').then((data) => {
         self.orders = data.body.data;
       }, () => {
         console.log(2);
+      });*/
+      this.$http.get(service_url+'/o2o/shop/wx/car/selectgoods.do').then( (data)=> {
+//              this.$router.push({ path: '/store_up',query:{"type":1} });
+        if(data.body.status===0){
+          self.orders = data.body.fields.orders;
+        }else{
+          alert(data.body.fields.error_reason);
+        }
       });
       this.loading = false;
     },
@@ -68,11 +79,12 @@
         loading:true,
         orders:[],
         sum:0,
-        check:true
+        check:true,
+        senddatas:[]
       }
     },
     components:{
-      XButton
+      XButton,Group
     },
     methods:{
       checkboxall(){
@@ -109,7 +121,7 @@
         let this_obj=$("#goods"+id);
         if(this_obj.prop("checked")){
           this_obj.removeAttr("checked");
-          $(e.target).parent().siblings(".weui_check_two").find(":checkbox").removeAttr("checked");
+          this_obj.parent().parent().siblings(".weui_check_two").find(":checkbox").removeAttr("checked");
 
         }else{
           this_obj.prop("checked","true");
@@ -121,7 +133,20 @@
         }
         this.checkPrice();
       },
-      removeTodo(index,goods,parentIndex){
+      removeTodo(index,goods,parentIndex,goods_id,order_id){
+          const cardata={
+              "data":{
+                  goodsid:goods_id,
+                  orderid:order_id
+              }
+          };
+        this.$http.post(service_url+'/o2o/shop/wx/deletecar.do',cardata).then( (data)=> {
+          if(data.body.status===0){
+            alert("删除成功");
+          }else{
+            alert(data.body.fields.error_reason);
+          }
+        });
         goods.splice(index,1);
         if(goods.length==0){
           this.orders.splice(parentIndex,1);
@@ -129,15 +154,43 @@
         this.checkPrice();
       },
       checkPrice(){
+        let self=this;
         let checked_obj = $(".weui_check_single").find(":checked");
         this.sum=0;
-        for(let i = 0;i<checked_obj.length;i++){
-          let siblings=$(checked_obj[i]).parent().next().next();
+        for(let k = 0;k<checked_obj.length;k++){
+          let siblings=$(checked_obj[k]).parent().next().next();
           let price = parseInt(siblings.find(".price_span").html());
           let num = parseInt(siblings.find(".num_span").html());
+          console.log("price"+price);
+          console.log("num"+num);
           let this_price = price*num;
+          console.log("this_price"+this_price);
           this.sum+=this_price;
+          console.log($(checked_obj[k]).attr("id"));
+          for(let i=0;i<self.orders.length;i++){
+            for(let j=0;j<self.orders[i].goods.length;j++){
+                let this_id="goods"+self.orders[i].goods[j].goods_id
+              if($(checked_obj[k]).attr("id")===this_id){
+                self.senddatas.push(self.orders[i].goods[j]);
+              }
+            }
+          }
         }
+        console.log(self.senddatas);
+      },
+      placeOrder(){
+        const senddata = {
+          "data": this.senddatas
+        };
+        this.$http.post(service_url+'/o2o/shop/wx/downorder.do',senddata).then( (data)=> {
+//              this.$router.push({ path: '/store_up',query:{"type":1} });
+          if(data.body.status===0){
+            alert("下单成功");
+            this.$router.push({ path: '/goods_order_list',query:{"type":1} });
+          }else{
+            alert(data.body.fields.error_reason);
+          }
+        });
       }
     }
   }

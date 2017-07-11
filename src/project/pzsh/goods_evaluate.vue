@@ -11,13 +11,15 @@
       </group>
     </div>
     <div style="margin:20px 10px 10px;">
-      <x-button v-if="type===1" class="abs_button" type="primary" @click.native="insertcomment">提交</x-button>
+      <x-button v-if="type===1" type="primary" class="zj_button"  @click.native="insertcomment">提交</x-button>
     </div>
+    <alert v-model="confirm_show" :title="dialog_title"> {{confirm_content}}</alert>
   </div>
 </template>
 
 <script>
-  import { Rater, Group, Cell, XTextarea, Panel, XButton} from 'vux'
+  import { Rater, Group, Cell, XTextarea, Panel, XButton, Alert} from 'vux'
+  import {setTitle} from '@/common/js/common';
 
   export default {
     components: {
@@ -26,14 +28,18 @@
       Cell,
       XTextarea,
       Panel,
-      XButton
+      XButton,
+      Alert
     },
     data () {
       return {
         placeholder:'请输入评价详细内容',
         ordernum:'',
         goods:[],
-        type:''
+        type:1,
+        confirm_show:false,
+        dialog_title:"",
+        confirm_content:""
       }
     },
     methods:{
@@ -41,7 +47,7 @@
         console.log('on', event)
       },
       insertcomment(){
-          const arr=[];
+        const arr=[];
         for(let i=0;i<this.goods.length;i++){
             const obj = {"goods_id":this.goods[i].goods_id,"eva_score":this.goods[i].eva_score,"eva_content":this.goods[i].eva_content};
           arr.push(obj);
@@ -52,17 +58,24 @@
         };
         this.$http.post(service_url+'/o2o/shop/wx/insertcomment.do',senddata).then( (data)=> {
           if(data.body.status===0){
-            alert("评价成功");
+            this.dialog_title="提示";
+            this.confirm_content="评价成功";
+            this.confirm_show=true;
             this.$router.push({ path: '/goods_order_list',query:{"type":1} });
           }else{
-            alert(data.body.error_reason);
+            this.dialog_title="提示";
+            this.confirm_content=data.body.error_reason;
+            this.confirm_show=true;
           }
         });
       }
     },
     mounted(){
+      setTitle("商品评价");
       let self = this;
-      this.type=this.$route.query.type;
+      document.getElementById("index_loading").style.display="none";
+      this.type=parseInt(this.$route.query.type);
+      console.log(this.type===2);
       this.ordernum=this.$route.query.ordernum;
       const senddata = {
         "data":{
@@ -83,7 +96,9 @@
                 self.goods[i].eva_content="";
             }
           }else{
-            alert(data.body.error_reason);
+            this.dialog_title="提示";
+            this.confirm_content=data.body.error_reason;
+            this.confirm_show=true;
           }
         });
       }else if(this.type===2){
@@ -91,11 +106,12 @@
           if(data.body.status===0){
             self.goods = data.body.fields;
           }else{
-            alert(data.body.error_reason);
+            this.dialog_title="提示";
+            this.confirm_content=data.body.error_reason;
+            this.confirm_show=true;
           }
         });
       }
-
       this.loading = false;
     },
   }

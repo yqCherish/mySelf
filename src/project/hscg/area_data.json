@@ -1,0 +1,373 @@
+{
+  /*会所场馆*/
+  "result":{
+    "data": {
+      "ad_img":[
+        //广告图片
+        {
+          "img": "", //广告图
+          "link": ""  //广告链接地址（如果存在）
+        }
+      ],
+      "all_project":[
+        {
+          "name": "", //项目名称
+          "img": "", //项目图片
+          "id": "", //项目id
+          "desc": ""   //项目描述
+        }
+      ],
+      "hot_project":[
+        //热门项目
+        {
+          "name": "",
+          "img": ""
+        }
+      ]
+    },
+    "status": 0,
+    "error_reason": ""
+  },
+
+
+  /*场馆具体信息*/
+  //传入
+  "data": {
+    "project_id": ""
+  },
+  //获得
+  "result": {
+    "data": {
+      "id": "", //项目id
+      "name": "", //项目名称
+      "score": "", //项目评分
+      "address": "", //项目场馆地址
+      "worktime": "", //工作时间
+      "tel": "", //项目场馆电话
+      "desc": "", //项目描述
+      "evaluate": {
+        //评价信息
+        "eva_num": 0,//总评价量
+        "eva_detail":[
+          //评价详情
+          {
+            "eva_img": "", //评价人图片
+            "eva_name": "", //评价人姓名
+            "eva_score": "", //评价人给分
+            "eva_time": "", //评价时间
+            "eva_content": ""//评价具体内容
+          }
+        ]
+      }
+    },
+    "status": 0,
+    "error_reason": ""
+  },
+
+
+  /*场馆预定页面*/
+  //传入
+  "data": {
+    "project_id": ""
+  },
+  //获得
+  "result": {
+    "data": {
+      "can_reserve_data": "",//可以预约的天数
+      "area":[                //场地数组
+        {
+          "area_name": "",    //场地名称
+          "time_cycle":[      //时间周期
+            {
+              "time": "",     //时间
+              "state": ""     //状态
+            }
+          ]
+        }
+      ]
+    },
+    "status": 0,
+    "error_reason": ""
+  },
+
+
+  /*场馆预定按钮*/
+  //传入
+  "data": [
+    {
+      "area_id": "", //消费场馆场地id
+      "area_name": "", //消费场馆场地名称
+      "cost_date": "", //消费日期
+      "cost_time": ""   //消费时间
+    }
+  ],
+  //获得
+  "result": {
+    "data": {
+      "area":[{
+        "area_id": "", //消费场馆场地id
+        "area_name": "", //消费场馆场地名称
+        "cost_date": "", //消费日期
+        "cost_time": "",   //消费时间
+        "price":""
+      }],
+      "card":[
+        {
+          "card_name":"",     //如果是单项目卡则展示单项目名（如篮球）
+          "card_validate":"", //卡的有效期
+          "card_id": "",      //会员卡id
+          "card_type": "",    //会员卡类型（金卡银卡）
+          "cost_extra": ""    //消费余额
+        }
+      ]
+    },
+    "status": 0,
+    "error_reason": ""
+  },
+
+
+  /*预定操作*/
+  //传入
+  "data": {
+    "card_id": "", //会员卡id
+    "area_id":"", //消费场馆场地id
+    "cost_date": "", //消费日期
+    "cost_time": ""    //消费时间
+  },
+  //获得
+  "result": {
+    "status": 0,
+    "error_reason":""
+  },
+
+
+  /*订单列表*/
+  //获得
+  "result": {
+    "data": {
+      "state": "", //3中状态 1已预约 2已入场 3已离场
+      "project":[{
+        "project_id":"",    //项目id
+        "project_name":"",  //项目名称
+        "area":[{
+            "order_id":"",  //订单id
+            "area_img":"", //场馆图片（展示一张）
+            "area_id": "", //场地id
+            "area_name": "" ,//场地名称
+            "area_time": "" ,//预约时间
+            "area_date": "" ,//预约日期
+            "price":""       //预计费用
+          }]
+      }]
+    },
+    "status": 0,
+    "error_reason": ""
+  },
+
+  /*我的会员卡*/
+  //获得
+  "result":{
+    "data":[
+      {
+        "card_name":"",     //如果是单项目卡则展示单项目名（如篮球）
+        "card_validate":"", //卡的有效期
+        "card_id": "",      //会员卡id
+        "card_type": "",    //会员卡类型（金卡银卡）
+        "cost_extra": ""    //消费余额
+      }
+    ],
+    "status": 0,
+    "error_reason": ""
+  },
+
+
+  /*订单详细*/
+  //传入
+  "data":{
+    "order_id":""      //场地id
+  },
+  //获得
+  "result":{
+    "area_img":"", //场馆图片（展示一张）
+    "area_id": "", //场地id
+    "area_name": "" ,//场地名称
+    "area_time": "" ,//预约时间
+    "area_date": "" ,//预约日期
+    "price":"",       //预计费用
+    "card_name":""    //使用卡名称
+  },
+
+  /*跳蚤市场*/
+  /*市场首页*/
+  //传入
+  "data": {
+    "pageno": "", //第几页
+    "pagesize":"", //每页数量
+    "sort": "", //分类
+    "rack": "",             //排序方式
+    "searchValue": ""      //搜索方式
+  },
+  //获得
+  "result": {
+    "status": 0, //返回状态 0成功，1失败
+    "error_reason": "", //失败原因
+    "totalpage": 2,       //总页数
+    "data": {
+      "goodsList": [
+        {
+          "goods_id": "", //商品id
+          "img": "", //商品图片
+          "name": "", //商品名称
+          "price": 0, //商品价格
+          "time": "", //发布时间
+          "degree": ""     //商品成色
+        }
+      ],
+      "sort": [
+        {
+          "value": "综和", //类别名称
+          "key": 1        //类别key
+        }
+      ],
+      "rack": [
+        {
+          "key": 2, //排序方式key
+          "value": "服装类"//排序方式value
+        }
+      ]
+    }
+  },
+  /*宝贝详情*/
+  //传入
+  "data": {
+    "goods_id": ""       //商品id
+  },
+  //获得
+  "result": {
+    "status": 0, //返回状态 0成功，1失败
+    "error_reason":"", //失败原因
+    "data": {
+      "goods_img":[
+        {
+          "goods_img": ""      //商品图片
+        }
+      ],
+      "goods_id": 1, //商品id
+      "name": "", //商品名称
+      "price": "", //商品价格
+      "degree": "", //几层新
+      "time": "", //发布时间
+      "has_watch": "", //浏览量
+      "goods_content": "", //商品详细介绍
+      "evaluate": [
+        {
+          "eva_img": "", //评论人头像
+          "eva_name": "", //评论人姓名
+          "eva_time": "", //评论日期
+          "eva_content": "", //评论内容
+          "ishide": 0         //是否隐藏
+        }
+      ],
+      "trolley": 0, //1已收藏  2未收藏
+      "thumbsup_num": 0, //点赞数量
+      "tel": ""                //手机号码
+    }
+  },
+  /*评论*/
+  //传入
+  "data": {
+    "goods_id":"", //商品id
+    "eva_score": "", //评分
+    "eva_content": ""    //评价内容
+  },
+  //获得
+  "result": {
+    "status": 0, //返回状态 0成功，1失败
+    "error_reason":""   //失败原因
+  },
+  /*点赞*/
+  //传入
+  "data": {
+    "goods_id": ""       //商品id
+  },
+  //获得
+  "result": {
+    "status": 0, //返回状态 0成功，1失败
+    "error_reason":""   //失败原因
+  },
+  /*收藏*/
+  //传入
+  "data": {
+    "goods_id": ""       //商品id
+  },
+  //获得
+  "result": {
+    "status": 0, //返回状态 0成功，1失败
+    "error_reason":""   //失败原因
+  },
+  /*进入商品发布页面*/
+  //获得
+  "result": {
+    "data": {
+      "sort":[],
+      "user_name": "",
+      "user_tel": ""
+    },
+    "status": 0,          //返回状态 0成功，1失败
+    "error_reason": ""   //失败原因
+  },
+  /*商品发布*/
+  //传入
+  "data": {
+    "goods_name": "", //商品名称
+    "goods_degree": "",     //商品成色
+    "goods_sort": "", //商品分类
+    "goods_price": "", //商品价格
+    "goods_desc":"", //商品描述
+    "user_name": "", //发布人姓名
+    "user_tem": "",       //发布人电话
+    "goods_img":[]       //商品图片（最多4张）
+  },
+  //获得
+  "result": {
+    "status": 0, //返回状态 0成功，1失败
+    "error_reason": ""   //失败原因
+  },
+  /*我的发布列表*/
+  //获得
+  "result": {
+    "status": 0, //返回状态 0成功，1失败
+    "error_reason": "",   //失败原因
+    "data":[
+      {
+        "goods_id":"",        //商品id
+        "goods_name":"",      //商品名称
+        "goods_price":"",     //商品价格
+        "goods_degree":"",    //商品成色
+        "goods_img":""        //商品图片（取第一张）
+      }
+    ]
+  },
+
+  /*发布详情*/
+  //传入
+  "data":{
+    "goods_id":""           //商品id
+  },
+  //获得
+  "result": {
+    "data": {
+      "sort":[],
+      "goods_name": "", //商品名称
+      "goods_degree": "",     //商品成色
+      "goods_sort": "", //商品分类
+      "goods_price": "", //商品价格
+      "goods_desc":"", //商品描述
+      "user_name": "", //发布人姓名
+      "user_tem": "",       //发布人电话
+      "goods_img":[]       //商品图片（最多4张）
+    },
+    "status": 0,          //返回状态 0成功，1失败
+    "error_reason": ""   //失败原因
+  }
+}

@@ -16,7 +16,7 @@
       <slot></slot>
       <footer class="load-more">
         <slot name="load-more">
-          <span>加载中……</span>
+          <LoadMore tip="正在加载"></LoadMore>
         </slot>
       </footer>
     </section>
@@ -24,6 +24,7 @@
 </template>
 
 <script>
+  import { LoadMore } from 'vux'
 export default {
   props: {
     offset: {
@@ -57,6 +58,9 @@ export default {
       touching: false,
       infiniteLoading: false
     }
+  },
+  components:{
+    LoadMore
   },
   methods: {
     touchStart(e) {
@@ -139,7 +143,7 @@ export default {
   left: 0;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
-  background-color: #ddd
+  background-color: #efeff4;
 }
 .yo-scroll .inner {
   position: absolute;
@@ -152,7 +156,7 @@ export default {
   left: 0;
   top: 0;
   width: 100%;
-  height: 2rem;
+  height: 44.8px;
   display: flex;
   align-items: center;
   justify-content: center;

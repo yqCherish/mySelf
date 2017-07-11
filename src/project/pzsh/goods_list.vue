@@ -1,9 +1,9 @@
 <template>
   <div>
-    <div class="single_goods" v-for="item in goodsItem">
+    <div v-if="enter_type===1" class="single_goods" v-for="item in goodsItem">
       <router-link :to="{path:'goods_detail',query: {id:item.goods_id}}">
         <a class="display_block font_14">
-          <div><img :src="item.img?item.img:'http://pic.qiantucdn.com/58pic/25/94/22/94558PICxJ3_1024.jpg'" width="100%" style="height:180px;"/></div>
+          <div><img :src="item.img" width="100%" style="height:180px;"/></div>
           <div class="padding_5">
             <p class="width_10 text_ellipsis">{{item.name}}</p>
             <p><span class="color_red font_1_4">￥{{item.price}}</span><span class="next_span">已销{{item.sale_num}}件</span></p>
@@ -11,8 +11,18 @@
         </a>
       </router-link>
     </div>
+    <div v-if="enter_type===2" class="single_goods" v-for="item in goodsItem">
+      <router-link :to="{path:'market_detail',query: {id:item.id}}">
+        <a class="display_block font_14">
+          <div><img :src="item.goods_img[0]" width="100%" style="height:180px;"/></div>
+          <div class="padding_5">
+            <p class="width_10 text_ellipsis">{{item.name}}</p>
+            <p><span class="color_red font_1_4">￥{{item.price}}</span><span class="next_span">{{item.quality}}成新</span></p>
+          </div>
+        </a>
+      </router-link>
+    </div>
   </div>
-
 </template>
 <script>
   export default{
@@ -21,6 +31,9 @@
         type: [Object, Array],
         default: () => ({})
       },
+      enter_type:{
+          type:Number
+      }
     }
   }
 </script>

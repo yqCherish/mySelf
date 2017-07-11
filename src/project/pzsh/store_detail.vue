@@ -1,8 +1,8 @@
 <template>
   <div>
-    <Loading v-if="loading"></Loading>
-    <Scroller v-else :on-refresh="onRefresh" :on-infinite="onInfinite" style="margin-top:-2em;">
-      <div class="posr" style="max-height:10rem"><img style="opacity:0.4;filter:alpha(opacity=40);width:100%;max-height:10rem" src="http://pic.qiantucdn.com/58pic/25/94/22/94558PICxJ3_1024.jpg"/>
+    <!--<Loading v-if="loading"></Loading>-->
+    <Scroller :on-refresh="onRefresh" :on-infinite="onInfinite" style="margin-top:-44.8px;">
+      <div class="posr" style="max-height:10rem"><img style="width:100%;max-height:10rem" src="../../common/img/store_bg.png"/>
         <div style="position:absolute;bottom:.5rem;left:.5rem">
           <div class="f_flex" style="align-items: center">
             <div style="width:4rem;height:4rem"><img :src="img" style="object-fit: cover;height: 100%;width:100%"/></div>
@@ -21,7 +21,7 @@
         </div>
       </div>
       <div class="center_content font_1_2">
-        <goodslist :goodsItem="goodsItem"></goodslist>
+        <goodslist :goodsItem="goodsItem" :enter_type="1"></goodslist>
       </div>
     </Scroller>
     <actionsheet v-model="show_sort" :menus="sort" @on-click-menu="click_sort"></actionsheet>
@@ -34,44 +34,16 @@
   import goodslist from './goods_list.vue'
   import Scroller from '@/components/scroller_me/scroller';
   import Loading from '@/components/loading/dataLoading'
-
-  const goodList=[
-    {
-      goods_id:1,
-      img:"http://pic.qiantucdn.com/58pic/25/94/22/94558PICxJ3_1024.jpg",
-      name:"这是一颗小星星",
-      price:1500,
-      sale_num:200
-    },{
-      goods_id:2,
-      img:"http://pic.qiantucdn.com/58pic/25/94/22/94558PICxJ3_1024.jpg",
-      name:"这是一颗小星星",
-      price:1500,
-      sale_num:200
-    },{
-      goods_id:3,
-      img:"http://pic.qiantucdn.com/58pic/25/94/22/94558PICxJ3_1024.jpg",
-      name:"这是一颗小星星",
-      price:1500,
-      sale_num:200
-    }
-  ];
-  const goodsItem=goodList.map((item, index) => ({
-    goods_id: item.goods_id,
-    img: item.img,
-    name: item.name,
-    price: item.price,
-    sale_num: item.sale_num,
-  }));
+  import {setTitle} from '@/common/js/common';
 
   export default {
     data () {
       return {
         loading:true,
-        store_name:'丰诚自营商品自营店',
+        store_name:'',
         demo06_index: 0,
-        goodsItem:goodsItem,//商品列表
-        current_sort:'默认',
+        goodsItem:[],//商品列表
+        current_sort:'综合',
         sort:[],
         show_sort:false,
         show_rack:false,
@@ -81,13 +53,15 @@
         pagesize:4,
         current_sort_key:0,
         current_rack_key:0,
-        totalpage:[]
+        totalpage:[],
+        img:""
       }
     },
     components: {
       Swiper,Search,goodslist,Selector, Group,Actionsheet,Scroller,Loading
     },
     mounted(){
+      setTitle("商铺详情");
       this.store_id=this.$route.query.store_id;
       this.getlist();
     },
@@ -101,6 +75,7 @@
               "sort":this.current_sort_key,
               "rack":this.current_rack_key,
               "storeid":this.store_id
+//              "storeid":1
             }
           };
           this.$http.post(service_url+'/o2o/shop/wx/store/indexinfo.do',senddata).then( (data)=> {
@@ -114,9 +89,17 @@
               self.goodsItem=data.body.fields.goodsList;
             }*/
             self.totalpage=data.body.totalpage;
+            if(self.totalpage===1||self.totalpage===0){
+              this.$el.querySelector('.load-more').style.display = 'none';
+            }else{
+              this.$el.querySelector('.load-more').style.display = 'block';
+            }
             self.goodsItem=data.body.fields.goodsList;
+            console.log(self.goodsItem);
+            self.img=data.body.fields.img;
+            self.store_name=data.body.fields.store_name;
 
-            let arr_sort=data.body.fields.sort;
+            let arr_sort=data.body.sort;
             let json_sort={};
             for(var i=0;i<arr_sort.length;i++)
             {
@@ -124,7 +107,7 @@
             }
             self.sort=json_sort;
 
-            let arr_rack=data.body.fields.rack;
+            let arr_rack=data.body.rack;
             let json_rack={};
             for(var j=0;j<arr_rack.length;j++)
             {
@@ -135,7 +118,7 @@
           },()=>{
             console.log(2);
           });
-          this.loading=false;
+        document.getElementById("index_loading").style.display="none";
         },
       demo06_onIndexChange (index) {
         this.demo06_index = index
@@ -169,14 +152,14 @@
         }
       },
       onInfinite(done) {
-        console.log("onInfinite")
         this.pageno++;
         const senddata = {
           "data": {
             "pageno":this.pageno,
             "pagesize":this.pagesize,
             "sort":this.current_sort_key,
-            "rack":this.current_rack_key
+            "rack":this.current_rack_key,
+            "storeid":1
           }
         };
         const self = this;
@@ -304,7 +287,7 @@
     transform: rotateZ(0);
   }
   .center_content{
-    padding:1.6% 0;
+    padding:1.6% 0 0;
     border-top:1px solid #999;
     border-bottom:1px solid #999;
     overflow: hidden;

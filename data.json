@@ -1,4 +1,20 @@
 {
+  "getVillage": {
+    "data": [
+      {
+        "id": 1,
+        "name": "光谷天地"
+      },
+      {
+        "id": 2,
+        "name": "重庆天地"
+      },
+      {
+        "id": 3,
+        "name": "上海天地"
+      }
+    ]
+  },
   "goodsDetails": {
     "goods_id": 1,
     "name": "粥品香坊（回龙观）",
@@ -7,7 +23,7 @@
     "sale_num": 500,
     "wximgs": [
       {
-        "img": "http://pic.qiantucdn.com/58pic/14/59/28/74A58PICIrd_1024.jpg"
+        "img": "https://img.alicdn.com/bao/uploaded/i1/TB1D.9ZQpXXXXcFXXXXXXXXXXXX_!!0-item_pic.jpg_640x640q50.jpg"
       },
       {
         "img": "http://pic.qiantucdn.com/58pic/23/12/64/92G58PIC93T_1024.jpg"
@@ -84,8 +100,9 @@
   "goodsOrderList": [
     {
       "store_name": "anta安凯专卖店",
+      "ordernum": "1231",
       "store_id": "1",
-      "state": "已下单",
+      "state": 0,
       "goods": [
         {
           "goods_id": "1",
@@ -93,7 +110,8 @@
           "name": "安踏女鞋 跑步鞋春季2017新款正品轻便韩版",
           "property": "白色37.5",
           "num": 1,
-          "price": 1590
+          "price": 1590,
+          "modelid": 3
         },
         {
           "goods_id": "2",
@@ -101,7 +119,8 @@
           "name": "李宁足球真皮脚感5号4号3号儿童桑巴荣耀",
           "property": "5号球蓝色中国风啊",
           "num": 2,
-          "price": 1590
+          "price": 1590,
+          "modelid": 4
         }
       ],
       "totalprice": 3232
@@ -109,7 +128,7 @@
     {
       "store_name": "哈哈小伙子专卖店",
       "store_id": "2",
-      "state": "已确认",
+      "state": 1,
       "goods": [
         {
           "goods_id": "3",
@@ -117,7 +136,8 @@
           "name": "安踏女鞋 跑步鞋春季2017新款正品轻便韩",
           "property": "白色37.5",
           "num": 1,
-          "price": 1590
+          "price": 1590,
+          "modelid":5
         },
         {
           "goods_id": "4",
@@ -125,7 +145,8 @@
           "name": "李宁足球真皮脚感5号4号3号儿童桑巴荣耀",
           "property": "5号球蓝色中国风",
           "num": 2,
-          "price": 1590
+          "price": 1590,
+          "modelid":6
         }
       ],
       "totalprice": 3232
@@ -133,7 +154,7 @@
     {
       "store_name": "哈哈小伙子专卖店",
       "store_id": "3",
-      "state": "已支付",
+      "state": 2,
       "goods": [
         {
           "goods_id": "5",
@@ -141,7 +162,8 @@
           "name": "安踏女鞋 跑步鞋春季2017新款正品轻便韩",
           "property": "白色37.5",
           "num": 1,
-          "price": 1590
+          "price": 1590,
+          "modelid":7
         },
         {
           "goods_id": "6",
@@ -149,7 +171,8 @@
           "name": "李宁足球真皮脚感5号4号3号儿童桑巴荣耀",
           "property": "5号球蓝色中国风",
           "num": 2,
-          "price": 1590
+          "price": 1590,
+          "modelid":8
         }
       ],
       "totalprice": 3232
@@ -157,7 +180,7 @@
     {
       "store_name": "哈哈小伙子专卖店",
       "store_id": "4",
-      "state": "已发货",
+      "state": 3,
       "goods": [
         {
           "goods_id": "7",
@@ -165,7 +188,8 @@
           "name": "安踏女鞋 跑步鞋春季2017新款正品轻便韩",
           "property": "白色37.5",
           "num": 1,
-          "price": 1590
+          "price": 1590,
+          "modelid":9
         },
         {
           "goods_id": "8",
@@ -173,7 +197,8 @@
           "name": "李宁足球真皮脚感5号4号3号儿童桑巴荣耀",
           "property": "5号球蓝色中国风",
           "num": 2,
-          "price": 1590
+          "price": 1590,
+          "modelid":10
         }
       ],
       "totalprice": 3232
@@ -181,7 +206,7 @@
     {
       "store_name": "哈哈小伙子专卖店",
       "store_id": "5",
-      "state": "已收货",
+      "state": 4,
       "goods": [
         {
           "goods_id": "9",
@@ -189,7 +214,8 @@
           "name": "安踏女鞋 跑步鞋春季2017新款正品轻便韩",
           "property": "白色37.5",
           "num": 1,
-          "price": 1590
+          "price": 1590,
+          "modelid":11
         },
         {
           "goods_id": "10",
@@ -197,7 +223,8 @@
           "name": "李宁足球真皮脚感5号4号3号儿童桑巴荣耀",
           "property": "5号球蓝色中国风",
           "num": 2,
-          "price": 1590
+          "price": 1590,
+          "modelid":12
         }
       ],
       "totalprice": 3232
@@ -205,7 +232,7 @@
     {
       "store_name": "哈哈小伙子专卖店",
       "store_id": "6",
-      "state": "已完成",
+      "state": 5,
       "show": "1",
       "goods": [
         {
@@ -214,7 +241,8 @@
           "name": "安踏女鞋 跑步鞋春季2017新款正品轻便韩",
           "property": "白色37.5",
           "num": 1,
-          "price": 1590
+          "price": 1590,
+          "modelid":13
         },
         {
           "goods_id": "12",
@@ -222,7 +250,8 @@
           "name": "李宁足球真皮脚感5号4号3号儿童桑巴荣耀",
           "property": "5号球蓝色中国风",
           "num": 2,
-          "price": 1590
+          "price": 1590,
+          "modelid":14
         }
       ],
       "totalprice": 3232
@@ -237,6 +266,7 @@
     "express_company": "顺丰速运",
     "express_no": "1234564879787897",
     "state": "已收货",
+    "totalprice":100,
     "goods": [
       {
         "goods_id": "1",
@@ -266,7 +296,9 @@
       "goodsList": [
         {
           "goods_id": 3,
-          "img": "http://192.168.1.19/o2o-shopkeeper-web/uploadtrademark/bdcf18de-4e51-4227-9ade-da89954d7a6c.png",
+          "id": 4,
+          "img": "https://img.alicdn.com/bao/uploaded/i1/TB1D.9ZQpXXXXcFXXXXXXXXXXXX_!!0-item_pic.jpg_640x640q50.jpg",
+          "goods_img": ["https://img.alicdn.com/bao/uploaded/i1/TB1D.9ZQpXXXXcFXXXXXXXXXXXX_!!0-item_pic.jpg_640x640q50.jpg","https://img.alicdn.com/bao/uploaded/i3/TB1f5w4JFXXXXcjXpXXXXXXXXXX_!!0-item_pic.jpg_430x430q90.jpg"],
           "name": "短袖衬衫",
           "price": 896.00,
           "max_price": 0,
@@ -280,11 +312,14 @@
           "desc": null,
           "detailimgs": [],
           "wximgs": [],
-          "trolley": 0
+          "trolley": 0,
+          "quality": 9
         },
         {
           "goods_id": 5,
-          "img": "http://192.168.1.19/o2o-shopkeeper-web/uploadtrademark/4540a2de-3406-45c6-8dbc-53f4d1f37d88.jpg",
+          "id": 4,
+          "img": ["https://img.alicdn.com/bao/uploaded/i3/TB1f5w4JFXXXXcjXpXXXXXXXXXX_!!0-item_pic.jpg_430x430q90.jpg","https://img.alicdn.com/bao/uploaded/i1/TB1D.9ZQpXXXXcFXXXXXXXXXXXX_!!0-item_pic.jpg_640x640q50.jpg"],
+          "goods_img": "https://img.alicdn.com/bao/uploaded/i3/TB1f5w4JFXXXXcjXpXXXXXXXXXX_!!0-item_pic.jpg_430x430q90.jpg",
           "name": "绿茶护肤水",
           "price": 653.00,
           "max_price": 0,
@@ -298,11 +333,14 @@
           "desc": null,
           "detailimgs": [],
           "wximgs": [],
-          "trolley": 0
+          "trolley": 0,
+          "quality": 9
         },
         {
           "goods_id": 2,
-          "img": "http://192.168.1.19/o2o-shopkeeper-web/uploadtrademark/74aaf2bf-6b96-4810-9a34-71512011569f.png",
+          "id": 4,
+          "img": "https://img.alicdn.com/bao/uploaded/i3/TB1NSNpOpXXXXcRXFXXXXXXXXXX_!!0-item_pic.jpg_430x430q90.jpg",
+          "goods_img": ["https://img.alicdn.com/bao/uploaded/i3/TB1NSNpOpXXXXcRXFXXXXXXXXXX_!!0-item_pic.jpg_430x430q90.jpg","https://img.alicdn.com/bao/uploaded/i3/TB1f5w4JFXXXXcjXpXXXXXXXXXX_!!0-item_pic.jpg_430x430q90.jpg"],
           "name": "巴黎欧莱雅",
           "price": 236.00,
           "max_price": 0,
@@ -316,11 +354,14 @@
           "desc": null,
           "detailimgs": [],
           "wximgs": [],
-          "trolley": 0
+          "trolley": 0,
+          "quality": 9
         },
         {
           "goods_id": 4,
-          "img": "http://192.168.1.19/o2o-shopkeeper-web/uploadtrademark/055a159f-a1e2-4304-b8bf-bf66959147eb.jpg",
+          "id": 4,
+          "img": "http://img.alicdn.com/bao/uploaded/i1/797538549/TB2anB_aRyN.eBjSZFkXXb8YFXa_!!797538549.jpg_430x430q90.jpg",
+          "goods_img": ["http://img.alicdn.com/bao/uploaded/i1/797538549/TB2anB_aRyN.eBjSZFkXXb8YFXa_!!797538549.jpg_430x430q90.jpg","https://img.alicdn.com/bao/uploaded/i3/TB1NSNpOpXXXXcRXFXXXXXXXXXX_!!0-item_pic.jpg_430x430q90.jpg"],
           "name": "长袖外套",
           "price": 178.00,
           "max_price": 0,
@@ -334,7 +375,8 @@
           "desc": null,
           "detailimgs": [],
           "wximgs": [],
-          "trolley": 0
+          "trolley": 0,
+          "quality": 9
         }
       ],
       "sort": [
@@ -374,5 +416,1714 @@
         }
       ]
     }
+  },
+  "marketDetail": {
+    "status": 0,
+    "error_reason": "",
+    "data": {
+      "goods_img": [
+        "http://pic.qiantucdn.com/58pic/14/59/28/74A58PICIrd_1024.jpg",
+        "http://pic.qiantucdn.com/58pic/23/12/64/92G58PIC93T_1024.jpg",
+        "http://pic.qiantucdn.com/58pic/25/94/22/94558PICxJ3_1024.jpg"
+      ],
+      "goods_id": 1,
+      "name": "佳能相机，红色，九成新，用了不到一个月，低价出售！！！带发票，同城交易",
+      "price": "1590",
+      "degree": "9",
+      "time": "2016-12-15 15:35",
+      "has_watch": "200",
+      "goods_content": "佳能相机，红色，九成新，用了不到一个月，低价出售！！！带发票，同城交易，很好，非常好的相机低价出售啦",
+      "evaluate": [
+        {
+          "photourl": "http://pic.qiantucdn.com/58pic/14/59/28/74A58PICIrd_1024.jpg",
+          "tname": "张三",
+          "eva_time": "2016-12-30",
+          "content": "便宜点咯，便宜点就拿走"
+        }
+      ],
+      "thumbsup_num": 0,
+      "tel": "15856898789"
+    }
+  },
+  "myPublished": {
+    "status": 0,
+    "error_reason": "",
+    "data": [
+      {
+        "id": 1,
+        "name": "佳能相机，红色，九成新，用了不到一个月，低价出售！！！带发票，同城交易",
+        "price": "1590",
+        "quality": "9",
+        "img": "http://pic.qiantucdn.com/58pic/14/59/28/74A58PICIrd_1024.jpg",
+        "goods_date": "2017-5-10",
+        "status":0
+      },
+      {
+        "id": 2,
+        "name": "电脑桌转让了，刚买的，要搬家没法带走，低价转走啦",
+        "price": "159",
+        "quality": "9",
+        "img": "http://pic.qiantucdn.com/58pic/25/94/22/94558PICxJ3_1024.jpg",
+        "goods_date": "2017-5-12",
+        "status":1
+      },
+      {
+        "id": 3,
+        "name": "知道最近的刘国梁事件吗",
+        "price": "159",
+        "quality": "9",
+        "img": "http://pic.qiantucdn.com/58pic/25/94/22/94558PICxJ3_1024.jpg",
+        "goods_date": "2017-5-12",
+        "status":2
+      },
+      {
+        "id": 4,
+        "name": "苟局长这下干的不错",
+        "price": "159",
+        "quality": "9",
+        "img": "http://pic.qiantucdn.com/58pic/25/94/22/94558PICxJ3_1024.jpg",
+        "goods_date": "2017-5-12",
+        "status":3
+      }
+    ]
+  },
+  "published_detail": {
+    "status": 0,
+    "error_reason": "",
+    "data": {
+      "rack": [
+        "家具",
+        "电器",
+        "生活用品",
+        "房屋"
+      ],
+      "user_name": "叶英俊",
+      "user_tel": "15852365487",
+      "goods_name": "8成新惠普暗夜精灵2代高配版低价出售，闲人勿扰",
+      "goods_degree": "8",
+      "goods_rack": "电器",
+      "goods_price": "6000",
+      "goods_desc": "买了笔记本之后家里又买了一台笔记本，一个人用不到多台，2月份买的暗夜精灵2代高配红影版低价卖了，联系电话15354688544",
+      "goods_img": [
+        {
+          "desc": "http://pic.qiantucdn.com/58pic/25/94/22/94558PICxJ3_1024.jpg"
+        },
+        {
+          "desc": "http://pic.qiantucdn.com/58pic/23/12/64/92G58PIC93T_1024.jpg"
+        }
+      ]
+    }
+  },
+  "area_index": {
+    "data": {
+      "club": [
+        {
+          "key": 1,
+          "name": "天地中心会所"
+        },
+        {
+          "key": 2,
+          "name": "高级会所"
+        },
+        {
+          "key": 3,
+          "name": "超级会所"
+        }
+      ],
+      "all_project": [
+        {
+          "name": "羽毛球",
+          "img": "/o2o-club-web/uploadImages/d97cb3ea-328a-4fb8-9056-33c927017dd4.png",
+          "id": 1,
+          "desc": "羽毛球好好玩啊哟",
+          "icon": "http://192.168.1.25:8889/static/img/羽毛球.png",
+          "score": null,
+          "address": null,
+          "tel": null,
+          "evaluate": null,
+          "worktime": null
+        },
+        {
+          "name": "篮球",
+          "img": "/o2o-club-web/uploadImages/ad7f738e-8406-4558-91f3-26b74cf36376.png",
+          "id": 2,
+          "desc": "别看我像游泳，其实",
+          "icon": "http://192.168.1.25:8889/static/img/篮球.png",
+          "score": null,
+          "address": null,
+          "tel": null,
+          "evaluate": null,
+          "worktime": null
+        },
+        {
+          "name": "游泳",
+          "img": "/o2o-club-web/uploadImages/4aac5b42-ee34-4741-b4aa-77e94637aa4f.png",
+          "id": 3,
+          "desc": "游泳天地，声响一下",
+          "icon": "http://192.168.1.25:8889/static/img/游泳.png",
+          "score": null,
+          "address": null,
+          "tel": null,
+          "evaluate": null,
+          "worktime": null
+        },
+        {
+          "name": "乒乓球",
+          "img": "/o2o-club-web/uploadImages/5a2e2154-904e-4eef-b230-6314f1c53477.png",
+          "id": 4,
+          "desc": "我是世界冠军哦啊",
+          "icon": "http://192.168.1.25:8889/static/img/乒乓球.png",
+          "score": null,
+          "address": null,
+          "tel": null,
+          "evaluate": null,
+          "worktime": null
+        },
+        {
+          "name": "足球",
+          "img": "/o2o-club-web/uploadImages/1d0e45b7-2fc0-487b-8cb1-f1e5d3124b8b.png",
+          "id": 5,
+          "desc": "我的台球可以当足",
+          "icon": "http://192.168.1.25:8889/static/img/足球.png",
+          "score": null,
+          "address": null,
+          "tel": null,
+          "evaluate": null,
+          "worktime": null
+        }
+      ],
+      "hot_project": {
+        "name": "篮球",
+        "img": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1496644382216&di=b25896db0299b687b78b6764bb14d14b&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F14%2F18%2F21%2F32h58PICy6s_1024.jpg",
+        "id": 3,
+        "desc": "虎扑兄弟们，篮球约",
+        "icon": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1496643469783&di=f3c048d8659010d8c6524bf3851e6bbf&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F14%2F62%2F61%2F83U58PICrpz_1024.jpg",
+        "score": null,
+        "address": null,
+        "tel": null,
+        "evaluate": null,
+        "worktime": null
+      }
+    },
+    "status": 0,
+    "error_reason": null
+  },
+  "area_detail": {
+    "status": 0,
+    "error_reason": "",
+    "data": {
+      "img": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1497349609052&di=eb46628d34cd048ac5f9cfb131855ba3&imgtype=0&src=http%3A%2F%2Fwww.sh.xinhuanet.com%2Fzhuanti2006%2F2006-03%2F19%2Fxin_560303191229390812625.jpg",
+      "name": "篮球",
+      "score": "5",
+      "address": "中北路中建三局27层",
+      "worktime": "8:00-18:00",
+      "tel": "18271671875",
+      "desc": "项目描述项目描述项目描述项目描述项目描述项目描述项目描述项目描述项目描述项目描述项目描述项目描述",
+      "evaluate": {
+        "eva_detail": [
+          {
+            "eva_img": "http://pic.qiantucdn.com/58pic/23/12/64/92G58PIC93T_1024.jpg",
+            "eva_name": "小叶子",
+            "eva_score": 5,
+            "eva_time": "2016-12-12",
+            "eva_content": "谁画出这天地，又画出我和你"
+          }
+        ]
+      }
+    }
+  },
+  "club_order_list": {
+    "status": 0,
+    "error_reason": "",
+    "data": [
+      {
+        "project_name": "篮球",
+        "club_name": "天地会所",
+        "state": 0,
+        "state_name": "已预约",
+        "order_id": "17",
+        "img": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1495684390368&di=26ac8a451324bf210e6612fe2193a17e&imgtype=0&src=http%3A%2F%2Fg.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2Fa686c9177f3e6709f7a20d6939c79f3df9dc5581.jpg",
+        "area_name": "篮球半场1",
+        "area_time": "13:00-14:00",
+        "area_date": "2017-2-12",
+        "price": "50",
+        "area_id": 2
+      },
+      {
+        "project_name": "足球",
+        "club_name": "天地会所",
+        "order_id": "18",
+        "state": 1,
+        "state_name": "已入场",
+        "img": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1495684459364&di=afa34dc5a497e44728501c075db7d86a&imgtype=0&src=http%3A%2F%2Fimg12.3lian.com%2Fgaoqing02%2F06%2F56%2F17.jpg",
+        "area_name": "足球场1",
+        "area_time": "23:28",
+        "area_date": "2017-2-12",
+        "price": "200"
+      },
+      {
+        "project_name": "足球",
+        "club_name": "天地会所",
+        "order_id": "19",
+        "state": 2,
+        "state_name": "已离场",
+        "img": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1495684459364&di=afa34dc5a497e44728501c075db7d86a&imgtype=0&src=http%3A%2F%2Fimg12.3lian.com%2Fgaoqing02%2F06%2F56%2F17.jpg",
+        "area_name": "足球场1",
+        "area_time": "23:28",
+        "area_date": "2017-2-12",
+        "price": "200"
+      },
+      {
+        "project_name": "羽毛球",
+        "club_name": "天地会所",
+        "order_id": "3",
+        "state": 2,
+        "state_name": "已完成",
+        "img": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1495684501049&di=c9531c5d08e9bfdf1ea8cc69c3912852&imgtype=0&src=http%3A%2F%2Fwww.deskier.com%2Fuploads%2Fallimg%2F161011%2F1-161011193139.jpg",
+        "area_name": "羽毛球1",
+        "area_time": "23:28",
+        "area_date": "2017-2-12",
+        "price": "30"
+      },
+      {
+        "project_name": "羽毛球",
+        "club_name": "天地会所",
+        "order_id": "4",
+        "state": 3,
+        "state_name": "已评价",
+        "img": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1495684501049&di=c9531c5d08e9bfdf1ea8cc69c3912852&imgtype=0&src=http%3A%2F%2Fwww.deskier.com%2Fuploads%2Fallimg%2F161011%2F1-161011193139.jpg",
+        "area_name": "羽毛球1",
+        "area_time": "23:28",
+        "area_date": "2017-2-12",
+        "price": "30"
+      },
+      {
+        "project_name": "羽毛球",
+        "club_name": "天地会所",
+        "order_id": "4",
+        "state": 4,
+        "state_name": "主动取消",
+        "img": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1495684501049&di=c9531c5d08e9bfdf1ea8cc69c3912852&imgtype=0&src=http%3A%2F%2Fwww.deskier.com%2Fuploads%2Fallimg%2F161011%2F1-161011193139.jpg",
+        "area_name": "羽毛球1",
+        "area_time": "23:28",
+        "area_date": "2017-2-12",
+        "price": "30"
+      }
+    ]
+  },
+  "my_vip": {
+    "data": [
+      {
+        "card_name": "59123841",
+        "card_validate": "2018-05-19",
+        "card_id": 1,
+        "card_type": "超级会员",
+        "cost_extra": "5000次"
+      },
+      {
+        "card_name": "34581",
+        "card_validate": "2018-04-23",
+        "card_id": 2,
+        "card_type": "地球卡",
+        "cost_extra": "50000.00元"
+      },
+      {
+        "card_name": "234556",
+        "card_validate": "2017-08-01",
+        "card_id": 3,
+        "card_type": "飞机卡",
+        "cost_extra": "132小时"
+      }
+    ],
+    "status": 0,
+    "error_reason": null
+  },
+  "club_order_detail": {
+    "area_img": "http://pic.qiantucdn.com/58pic/23/12/64/92G58PIC93T_1024.jpg",
+    "area_id": "2",
+    "area_name": "篮球馆",
+    "area_time": "15:00-16:00",
+    "area_date": "2017-5-17",
+    "price": "50",
+    "card_name": "篮球次卡"
+  },
+  "area_choose_date": {
+    "status": 0,
+    "error_reason": "",
+    "data": {
+      "can_reserve_data": 7
+    }
+  },
+  "area_choose_area": {
+    "status": 0,
+    "error_reason": "",
+    "data": [
+      {
+        "key": 1,
+        "value": "半场2"
+      },
+      {
+        "key": 2,
+        "value": "半场1"
+      },
+      {
+        "key": 3,
+        "value": "全场"
+      }
+    ]
+  },
+  "area_choose_time": {
+    "data": [
+      {
+        "start_time": "09:00:00",
+        "end_time": "09:30:00",
+        "key": 18,
+        "price": 22.00,
+        "status": -2,
+        "section": "09:00-09:30"
+      },
+      {
+        "start_time": "09:30:00",
+        "end_time": "10:00:00",
+        "key": 19,
+        "price": 22.00,
+        "status": 100,
+        "section": "09:30-10:00"
+      },
+      {
+        "start_time": "10:00:00",
+        "end_time": "10:30:00",
+        "key": 20,
+        "price": 22.00,
+        "status": 100,
+        "section": "10:00-10:30"
+      },
+      {
+        "start_time": "10:30:00",
+        "end_time": "11:00:00",
+        "key": 21,
+        "price": 22.00,
+        "status": -2,
+        "section": "10:30-11:00"
+      },
+      {
+        "start_time": "11:00:00",
+        "end_time": "11:30:00",
+        "key": 22,
+        "price": 22.00,
+        "status": 100,
+        "section": "11:00-11:30"
+      },
+      {
+        "start_time": "11:30:00",
+        "end_time": "12:00:00",
+        "key": 23,
+        "price": 22.00,
+        "status": 100,
+        "section": "11:30-12:00"
+      },
+      {
+        "start_time": "12:00:00",
+        "end_time": "12:30:00",
+        "key": 24,
+        "price": 22.00,
+        "status": -2,
+        "section": "12:00-12:30"
+      },
+      {
+        "start_time": "12:30:00",
+        "end_time": "13:00:00",
+        "key": 25,
+        "price": 22.00,
+        "status": -2,
+        "section": "12:30-13:00"
+      },
+      {
+        "start_time": "13:00:00",
+        "end_time": "13:30:00",
+        "key": 26,
+        "price": 22.00,
+        "status": 100,
+        "section": "13:00-13:30"
+      },
+      {
+        "start_time": "13:30:00",
+        "end_time": "14:00:00",
+        "key": 27,
+        "price": 22.00,
+        "status": 100,
+        "section": "13:30-14:00"
+      },
+      {
+        "start_time": "14:00:00",
+        "end_time": "14:30:00",
+        "key": 28,
+        "price": 22.00,
+        "status": 100,
+        "section": "14:00-14:30"
+      },
+      {
+        "start_time": "14:30:00",
+        "end_time": "15:00:00",
+        "key": 29,
+        "price": 22.00,
+        "status": 100,
+        "section": "14:30-15:00"
+      },
+      {
+        "start_time": "15:00:00",
+        "end_time": "15:30:00",
+        "key": 30,
+        "price": 22.00,
+        "status": -2,
+        "section": "15:00-15:30"
+      },
+      {
+        "start_time": "15:30:00",
+        "end_time": "16:00:00",
+        "key": 31,
+        "price": 22.00,
+        "status": 100,
+        "section": "15:30-16:00"
+      },
+      {
+        "start_time": "16:00:00",
+        "end_time": "16:30:00",
+        "key": 32,
+        "price": 22.00,
+        "status": 100,
+        "section": "16:00-16:30"
+      },
+      {
+        "start_time": "16:30:00",
+        "end_time": "17:00:00",
+        "key": 33,
+        "price": 22.00,
+        "status": 100,
+        "section": "16:30-17:00"
+      },
+      {
+        "start_time": "17:00:00",
+        "end_time": "17:30:00",
+        "key": 34,
+        "price": 22.00,
+        "status": -2,
+        "section": "17:00-17:30"
+      },
+      {
+        "start_time": "17:30:00",
+        "end_time": "18:00:00",
+        "key": 35,
+        "price": 22.00,
+        "status": -2,
+        "section": "17:30-18:00"
+      }
+    ],
+    "status": 0,
+    "error_reason": null
+  },
+  "myCardList": {
+    "data": [
+      {
+        "card_id": 1,
+        "card_name": "vip游泳卡",
+        "card_validate": "2018.6.6",
+        "cost_extra": "49",
+        "card_type": "1",
+        "card_no": "123456"
+      },
+      {
+        "card_id": 2,
+        "card_name": "金卡",
+        "card_validate": "2018.6.6",
+        "cost_extra": "80",
+        "card_type": "2",
+        "card_no": "123456"
+      },
+      {
+        "card_id": 3,
+        "card_name": "银卡",
+        "card_validate": "2018.6.6",
+        "cost_extra": "1000",
+        "card_type": "3",
+        "card_no": "123456"
+      }
+    ]
+  },
+  "qj_index": {
+    "status": 0,
+    "error_reason": null,
+    "totalpage": 10,
+    "current_option": {
+      "estate": "重庆天地雍江御庭01栋0单元",
+      "house": "3503",
+      "key": 8
+    },
+    "options": [
+      {
+        "estate": "重庆天地雍江御庭01栋0单元",
+        "house": "3503",
+        "key": 8
+      },
+      {
+        "estate": "重庆天地雍江御庭01栋0单元",
+        "house": "3505",
+        "key": 10
+      }
+    ],
+    "fresh_news": [
+      {
+        "id": 78,
+        "type": 5,
+        "type_num": "专业保洁",
+        "published_man": "lmy",
+        "published_time": "1497941281",
+        "published_img": "http://wx.qlogo.cn/mmopen/4VsKl2mia6QT0JJZiaichdUG54Q0vaWPicyvFVtXaaVTicibQ61P76RmZPibMOxcQt6E2hN3P7S2yGK2fzKibibvgyok1vO6eyqMurHVf/0",
+        "published_content": "擦玻璃服务中下了一条订单",
+        "published_from": "重庆天地雍江御庭",
+        "detail_img": [
+          "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1495880478585&di=b39d4765a032db8ccf94e13272fee8da&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F13%2F49%2F85%2F11v58PICPnk_1024.jpg"
+        ],
+        "is_stick": 0
+      },
+      {
+        "id": 77,
+        "type": 5,
+        "type_num": "专业保洁",
+        "published_man": "lmy",
+        "published_time": "1497926012",
+        "published_img": "http://wx.qlogo.cn/mmopen/ciaIftfPzwlpcMsn3AAXkSLb5yibAG6S05jMzgNKQHvaMtZjicrHwValjpN4SOA4biciaJ76nhaRGO1kod7uZPsl7vicAXKjPktf58/0",
+        "published_content": "扫地服务中下了一条订单",
+        "published_from": "重庆天地雍江御庭",
+        "detail_img": [
+          "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1495880478585&di=b39d4765a032db8ccf94e13272fee8da&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F13%2F49%2F85%2F11v58PICPnk_1024.jpg",
+          "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1495880589503&di=45a3a5c42780043cf0f08551f4897461&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F14%2F06%2F41%2F31c58PICTD7_1024.jpg"
+        ],
+        "is_stick": 0
+      },
+      {
+        "id": 76,
+        "type": 5,
+        "type_num": "专业保洁",
+        "published_man": "lmy",
+        "published_time": "1497871251",
+        "published_img": "http://wx.qlogo.cn/mmopen/ciaIftfPzwlpcMsn3AAXkSLb5yibAG6S05jMzgNKQHvaMtZjicrHwValjpN4SOA4biciaJ76nhaRGO1kod7uZPsl7vicAXKjPktf58/0",
+        "published_content": "擦玻璃服务中下了一条订单",
+        "published_from": "重庆天地雍江御庭",
+        "detail_img": [
+          "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1495880478585&di=b39d4765a032db8ccf94e13272fee8da&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F13%2F49%2F85%2F11v58PICPnk_1024.jpg",
+          "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1495880589503&di=45a3a5c42780043cf0f08551f4897461&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F14%2F06%2F41%2F31c58PICTD7_1024.jpg",
+          "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1495880478585&di=b39d4765a032db8ccf94e13272fee8da&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F13%2F49%2F85%2F11v58PICPnk_1024.jpg",
+          "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1495880589503&di=45a3a5c42780043cf0f08551f4897461&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F14%2F06%2F41%2F31c58PICTD7_1024.jpg"
+        ],
+        "is_stick": 0
+      },
+      {
+        "id": 75,
+        "type": 5,
+        "type_num": "专业保洁",
+        "published_man": "lmy",
+        "published_time": "1497871110",
+        "published_img": "http://wx.qlogo.cn/mmopen/ciaIftfPzwlpcMsn3AAXkSLb5yibAG6S05jMzgNKQHvaMtZjicrHwValjpN4SOA4biciaJ76nhaRGO1kod7uZPsl7vicAXKjPktf58/0",
+        "published_content": "擦玻璃服务中下了一条订单",
+        "published_from": "重庆天地雍江御庭",
+        "detail_img": [
+          "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1495880589503&di=45a3a5c42780043cf0f08551f4897461&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F14%2F06%2F41%2F31c58PICTD7_1024.jpg",
+          "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1495880478585&di=b39d4765a032db8ccf94e13272fee8da&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F13%2F49%2F85%2F11v58PICPnk_1024.jpg",
+          "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1495880589503&di=45a3a5c42780043cf0f08551f4897461&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F14%2F06%2F41%2F31c58PICTD7_1024.jpg"
+        ],
+        "is_stick": 0
+      },
+      {
+        "id": 70,
+        "type": 5,
+        "type_num": "专业保洁",
+        "published_man": "lmy",
+        "published_time": "1497941281",
+        "published_img": "http://wx.qlogo.cn/mmopen/ciaIftfPzwlpcMsn3AAXkSLb5yibAG6S05jMzgNKQHvaMtZjicrHwValjpN4SOA4biciaJ76nhaRGO1kod7uZPsl7vicAXKjPktf58/0",
+        "published_content": "扫地服务中下了一条订单",
+        "published_from": "重庆天地雍江御庭",
+        "detail_img": [
+          "http://fengcheng.fm-community.com.cn/o2o-reno-web/uploadtrademark/db881c37-7f30-449c-ac3e-21b0d935c63d.jpg"
+        ],
+        "is_stick": 0
+      },
+      {
+        "id": 71,
+        "type": 5,
+        "type_num": "专业保洁",
+        "published_man": "lmy",
+        "published_time": "1497926012",
+        "published_img": "http://wx.qlogo.cn/mmopen/ciaIftfPzwlpcMsn3AAXkSLb5yibAG6S05jMzgNKQHvaMtZjicrHwValjpN4SOA4biciaJ76nhaRGO1kod7uZPsl7vicAXKjPktf58/0",
+        "published_content": "扫地服务中下了一条订单",
+        "published_from": "重庆天地雍江御庭",
+        "detail_img": [],
+        "is_stick": 0
+      },
+      {
+        "id": 72,
+        "type": 5,
+        "type_num": "专业保洁",
+        "published_man": "lmy",
+        "published_time": "1497871251",
+        "published_img": "http://wx.qlogo.cn/mmopen/ciaIftfPzwlpcMsn3AAXkSLb5yibAG6S05jMzgNKQHvaMtZjicrHwValjpN4SOA4biciaJ76nhaRGO1kod7uZPsl7vicAXKjPktf58/0",
+        "published_content": "扫地服务中下了一条订单",
+        "published_from": "重庆天地雍江御庭",
+        "detail_img": [],
+        "is_stick": 0
+      },
+      {
+        "id": 73,
+        "type": 5,
+        "type_num": "专业保洁",
+        "published_man": "lmy",
+        "published_time": "1497871110",
+        "published_img": "http://wx.qlogo.cn/mmopen/ciaIftfPzwlpcMsn3AAXkSLb5yibAG6S05jMzgNKQHvaMtZjicrHwValjpN4SOA4biciaJ76nhaRGO1kod7uZPsl7vicAXKjPktf58/0",
+        "published_content": "扫地服务中下了一条订单",
+        "published_from": "重庆天地雍江御庭",
+        "detail_img": [],
+        "is_stick": 0
+      },
+      {
+        "id": 74,
+        "type": 5,
+        "type_num": "专业保洁",
+        "published_man": "lmy",
+        "published_time": "1496979272",
+        "published_img": "http://wx.qlogo.cn/mmopen/ciaIftfPzwlpcMsn3AAXkSLb5yibAG6S05jMzgNKQHvaMtZjicrHwValjpN4SOA4biciaJ76nhaRGO1kod7uZPsl7vicAXKjPktf58/0",
+        "published_content": "扫地服务中下了一条订单",
+        "published_from": "重庆天地雍江御庭",
+        "detail_img": [],
+        "is_stick": 0
+      },
+      {
+        "id": 67,
+        "type": 5,
+        "type_num": "专业保洁",
+        "published_man": "lmy",
+        "published_time": "1496979271",
+        "published_img": "http://wx.qlogo.cn/mmopen/ciaIftfPzwlpcMsn3AAXkSLb5yibAG6S05jMzgNKQHvaMtZjicrHwValjpN4SOA4biciaJ76nhaRGO1kod7uZPsl7vicAXKjPktf58/0",
+        "published_content": "扫地服务中下了一条订单",
+        "published_from": "重庆天地雍江御庭",
+        "detail_img": [],
+        "is_stick": 0
+      }
+    ]
+  },
+  "area_evaluate": {
+    "score": 4,
+    "content": "东西还可以，比较满意"
+  },
+  "door_list": {
+    "data": {
+      "public": [
+        {
+          "val": "1",
+          "desc": "南大门"
+        },
+        {
+          "val": "2",
+          "desc": "北大门"
+        }
+      ],
+      "person": [
+        {
+          "name": "一栋",
+          "cell": [
+            {
+              "val": "11",
+              "desc": "二单元",
+              "alldesc": "一栋二单元"
+            },
+            {
+              "val": "13",
+              "desc": "1单元",
+              "alldesc": "一栋1单元"
+            }
+          ]
+        },
+        {
+          "name": "二栋",
+          "cell": [
+            {
+              "val": "111",
+              "desc": "二单元",
+              "alldesc": "二栋二单元"
+            },
+            {
+              "val": "131",
+              "desc": "1单元",
+              "alldesc": "二栋1单元"
+            }
+          ]
+        },
+        {
+          "name": "三栋",
+          "cell": [
+            {
+              "val": "121",
+              "desc": "二单元",
+              "alldesc": "三栋二单元"
+            },
+            {
+              "val": "132",
+              "desc": "1单元",
+              "alldesc": "三栋1单元"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "tenant_list": {
+    "data": {
+      "tenant": [
+        "杨杨",
+        "丽丽",
+        "呆呆"
+      ],
+      "range": [
+        {
+          "val": "1",
+          "desc": "南大门"
+        },
+        {
+          "val": "1",
+          "desc": "北大门"
+        }
+      ]
+    }
+  },
+  "family_list": {
+    "data": [
+      {
+        "id": {
+          "val": "1",
+          "desc": ""
+        },
+        "status": {
+          "val": "1",
+          "desc": ""
+        },
+        "name": {
+          "val": "张三",
+          "desc": ""
+        },
+        "phone": {
+          "val": "1378887777",
+          "desc": ""
+        }
+      },
+      {
+        "id": {
+          "val": "1",
+          "desc": ""
+        },
+        "status": {
+          "val": "1",
+          "desc": ""
+        },
+        "name": {
+          "val": "张三",
+          "desc": ""
+        },
+        "phone": {
+          "val": "1378887777",
+          "desc": ""
+        }
+      }
+    ]
+  },
+  "service_detail": {
+    "status": {
+      "desc": "已完成"
+    },
+    "srid": {
+      "val": "123",
+      "desc": ""
+    },
+    "location": {
+      "val": "",
+      "desc": "研发大楼 B3座622"
+    },
+    "createtime": {
+      "val": "",
+      "desc": "2016年1月4日 12:22"
+    },
+    "detaildesc": {
+      "val": "",
+      "desc": "卫生间漏水了，请赶快过来修理，家里下午2点才人在"
+    },
+    "picurls": [
+      {
+        "thumb": "",
+        "ori": ""
+      },
+      {
+        "thumb": "",
+        "ori": ""
+      },
+      {
+        "thumb": "",
+        "ori": ""
+      }
+    ],
+    "servicehistorys": [
+      {
+        "status": "COMPLETED",
+        "desc": "张三已完成了您的服务申请。",
+        "remark": "已经改好了",
+        "lastUpdateTime": "2015-06-23 19:20:20",
+        "picurls": [
+          {
+            "thumb": "http://192.168.200.173:8180/fmc/servlet/displayfile?id=1232323",
+            "ori": "http://192.168.200.173:8180/fmc/servlet/displayfile?id=1232323"
+          },
+          {
+            "thumb": "",
+            "ori": ""
+          }
+        ],
+        "avatarurl": {
+          "thumb": "",
+          "ori": ""
+        },
+        "showpic": "Y",
+        "showlogopic": "Y"
+      },
+      {
+        "status": "ACCEPTED",
+        "desc": "您的服务工程部张三已接受,准备处理",
+        "remark": "",
+        "lastUpdateTime": "2015-06-23 19:20:20",
+        "picurls": [
+          {
+            "thumb": "",
+            "ori": ""
+          },
+          {
+            "thumb": "",
+            "ori": ""
+          },
+          {
+            "thumb": "",
+            "ori": ""
+          }
+        ],
+        "avatarurl": {
+          "thumb": "",
+          "ori": ""
+        },
+        "showpic": "Y",
+        "showlogopic": "Y"
+      },
+      {
+        "status": "ASSIGNED",
+        "desc": "您的申请已指派给工程部张三",
+        "remark": "",
+        "lastUpdateTime": "2015-06-23 19:20:20",
+        "picurls": [
+          {
+            "thumb": "",
+            "ori": ""
+          },
+          {
+            "thumb": "",
+            "ori": ""
+          },
+          {
+            "thumb": "",
+            "ori": ""
+          }
+        ],
+        "avatarurl": {
+          "thumb": "",
+          "ori": ""
+        },
+        "showpic": "",
+        "showlogopic": "Y"
+      },
+      {
+        "status": "COMMITED",
+        "desc": "您的服务已提交",
+        "remark": "",
+        "lastUpdateTime": "2015-06-23 19:20:20",
+        "picurls": [
+          {
+            "thumb": "",
+            "ori": ""
+          },
+          {
+            "thumb": "",
+            "ori": ""
+          },
+          {
+            "thumb": "",
+            "ori": ""
+          }
+        ],
+        "avatarurl": {
+          "thumb": "",
+          "ori": ""
+        },
+        "showpic": "N",
+        "showlogopic": "Y"
+      }
+    ],
+    "servicecost": {
+      "total": 260.0,
+      "items": [
+        {
+          "name": "10W灯泡",
+          "quantity": "2个",
+          "amount": 210.0
+        },
+        {
+          "name": "插座",
+          "quantity": "2个",
+          "amount": 25.0
+        },
+        {
+          "name": "插座",
+          "quantity": "1小时",
+          "amount": 25.0
+        }
+      ]
+    },
+    "score": 4,
+    "isontime": false,
+    "isdelaytime": true,
+    "feedback": "非常的好，头要炸了",
+    "iscancel": {
+      "val": "0",
+      "desc": ""
+    },
+    "hopetime": {
+      "val": "",
+      "desc": "2016-10-20 20:12:20"
+    }
+  },
+  "wb_detail": {
+    "data": {
+      "img": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1495880478585&di=b39d4765a032db8ccf94e13272fee8da&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F13%2F49%2F85%2F11v58PICPnk_1024.jpg",
+      "procedure_img": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1495884248309&di=1c8414996c788c66b4653f0511076753&imgtype=0&src=http%3A%2F%2Fa1.att.hudong.com%2F20%2F23%2F300533947107133427238351922_950.jpg",
+      "content": "客厅装修请联系我们，我们是非常专业的团队，10W用户的选择保证",
+      "tel": "13527898767",
+      "evaluate": [
+        {
+          "eva_img": "http://www.wsfjq.com/photos/bd14780305.jpg",
+          "eva_name": "小叶子",
+          "eva_score": 5,
+          "eva_time": "2016-12-12",
+          "eva_content": "谁画出这天地，又画出我和你"
+        },
+        {
+          "eva_img": "http://www.wsfjq.com/photos/bd14780305.jpg",
+          "eva_name": "小叶子",
+          "eva_score": 5,
+          "eva_time": "2016-12-12",
+          "eva_content": "谁画出这天地，又画出我和你"
+        }
+      ]
+    }
+  },
+  "wb_order_detail": {},
+  "wb_reserve": {
+    "data": {
+      "name": "张三",
+      "sex": "男",
+      "tel": "15478965987",
+      "address": "湖北省荆州市公安新联泰寸安静激发的科技发快递",
+      "unitprice":5,
+      "price":256,
+      "number":20,
+      "calunit": "元/台",
+      "content": "下了数量为50台的",
+      "time_line":[{
+        "desc": "微信新增订单",
+        "lastUpdateTime": "2017-07-06 22:54:23"
+      },{
+        "desc": "指派订单",
+        "lastUpdateTime": "2017-07-07 10:00:52"
+      },{
+        "desc": "阿达萨达",
+        "lastUpdateTime": "2017-07-13 08:00:00"
+      }]
+    }
+  },
+  "wb_bj": {
+    "data": [
+      {
+        "id": 1,
+        "img": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1495880478585&di=b39d4765a032db8ccf94e13272fee8da&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F13%2F49%2F85%2F11v58PICPnk_1024.jpg",
+        "name": "卧室装修",
+        "has_choose": "500"
+      },
+      {
+        "id": 2,
+        "img": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1495880589503&di=45a3a5c42780043cf0f08551f4897461&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F14%2F06%2F41%2F31c58PICTD7_1024.jpg",
+        "name": "客厅装修",
+        "has_choose": "500"
+      },
+      {
+        "id": 3,
+        "img": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1495880637711&di=05302733f1cab7d1621741a9fdbf4f78&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F75%2F54%2F23c58PICj8B_1024.jpg",
+        "name": "书房装修",
+        "has_choose": "500"
+      },
+      {
+        "id": 4,
+        "img": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1495880694457&di=c5ad13431a27dd65f516ab6efbc90e86&imgtype=0&src=http%3A%2F%2Fadv.images.tobosu.com%2F2013-04-22%2F95bd0bce-4c5e-44bb-bccc-9db3e35475f9.jpg",
+        "name": "厨房装修",
+        "has_choose": "500"
+      }
+    ],
+    "status": 0,
+    "error_reason": ""
+  },
+  "wb_order_list": {
+    "data": [
+      {
+        "state": 0,
+        "name": "客厅装修",
+        "order_id": 1,
+        "order_num": "12312341545",
+        "img": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1495880589503&di=45a3a5c42780043cf0f08551f4897461&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F14%2F06%2F41%2F31c58PICTD7_1024.jpg",
+        "price": 500
+      },
+      {
+        "state": 1,
+        "name": "客厅装修",
+        "order_id": 2,
+        "order_num": "12312341545",
+        "img": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1495880589503&di=45a3a5c42780043cf0f08551f4897461&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F14%2F06%2F41%2F31c58PICTD7_1024.jpg",
+        "price": 500
+      },
+      {
+        "state": 2,
+        "name": "客厅装修",
+        "order_id": 3,
+        "order_num": "12312341545",
+        "img": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1495880589503&di=45a3a5c42780043cf0f08551f4897461&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F14%2F06%2F41%2F31c58PICTD7_1024.jpg",
+        "price": 500
+      },
+      {
+        "state": 3,
+        "name": "客厅装修",
+        "order_id": 4,
+        "order_num": "12312341545",
+        "img": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1495880589503&di=45a3a5c42780043cf0f08551f4897461&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F14%2F06%2F41%2F31c58PICTD7_1024.jpg",
+        "price": 500
+      },
+      {
+        "state": 4,
+        "name": "客厅装修",
+        "order_id": 5,
+        "order_num": "12312341545",
+        "img": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1495880589503&di=45a3a5c42780043cf0f08551f4897461&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F14%2F06%2F41%2F31c58PICTD7_1024.jpg",
+        "price": 500
+      }
+    ]
+  },
+  "my_code": {
+    "data": {
+      "pic": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1496208350039&di=94e421f0c0ebf0db0d441774a4a8fdc5&imgtype=0&src=http%3A%2F%2Fpic1.fangketong.net%2Fapp_attach%2F201510%2F12%2F20151012_107_53905_1.jpg"
+    }
+  },
+  "code_share": {
+    "data": {
+      "pic": "",
+      "position": {
+        "val": "1",
+        "desc": "武汉B14区1栋0201房"
+      },
+      "time": {
+        "val": "2016-05-06  13:00",
+        "desc": ""
+      },
+      "name": {
+        "val": "张三",
+        "desc": ""
+      },
+      "sex": {
+        "val": "男",
+        "desc": ""
+      },
+      "phone": {
+        "val": "1378887777",
+        "desc": ""
+      }
+    }
+  },
+  "my_paylist": {
+    "data": {
+      "total_price": "1785.8865",
+      "items": [
+        {
+          "item_id": 1,
+          "title": "2017第一季度",
+          "total": "985.654",
+          "price_list": [
+            {
+              "name": "物业管理费",
+              "date": "01/01",
+              "price": "325.1231",
+              "unpaid": "325.2352"
+            },
+            {
+              "name": "物业管理费",
+              "date": "01/01",
+              "price": "325",
+              "unpaid": "325"
+            },
+            {
+              "name": "物业管理费",
+              "date": "01/01",
+              "price": "325",
+              "unpaid": "325"
+            },
+            {
+              "name": "物业管理费",
+              "date": "01/01",
+              "price": "325",
+              "unpaid": "325"
+            }
+          ]
+        },
+        {
+          "item_id": 1,
+          "title": "2017第二季度",
+          "total": "985",
+          "price_list": [
+            {
+              "name": "物业管理费",
+              "date": "01/01",
+              "price": "325",
+              "unpaid": "325"
+            },
+            {
+              "name": "物业管理费",
+              "date": "01/01",
+              "price": "325",
+              "unpaid": "325"
+            },
+            {
+              "name": "物业管理费",
+              "date": "01/01",
+              "price": "325",
+              "unpaid": "325"
+            },
+            {
+              "name": "物业管理费",
+              "date": "01/01",
+              "price": "325",
+              "unpaid": "325"
+            }
+          ]
+        },
+        {
+          "item_id": 1,
+          "title": "2017第三季度",
+          "total": "985",
+          "price_list": [
+            {
+              "name": "物业管理费",
+              "date": "01/01",
+              "price": "325",
+              "unpaid": "325"
+            },
+            {
+              "name": "物业管理费",
+              "date": "01/01",
+              "price": "325",
+              "unpaid": "325"
+            },
+            {
+              "name": "物业管理费",
+              "date": "01/01",
+              "price": "325",
+              "unpaid": "325"
+            },
+            {
+              "name": "物业管理费",
+              "date": "01/01",
+              "price": "325",
+              "unpaid": "325"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "wallet_record": {
+    "data": [
+      {
+        "name": "品质生活订单",
+        "date": "2016/11/25",
+        "price": "255"
+      },
+      {
+        "name": "物业费",
+        "date": "2017/2/24",
+        "price": "120"
+      },
+      {
+        "name": "停车费",
+        "date": "2017/3/22",
+        "price": "25"
+      },
+      {
+        "name": "停车费",
+        "date": "2017/3/23",
+        "price": "30"
+      }
+    ]
+  },
+  "wallet_code": {
+    "data": {
+      "password": "123456"
+    }
+  },
+  "myinfo": {
+    "data": {
+      "name": {
+        "val": "张三"
+      },
+      "phone": {
+        "val": "18271671874"
+      },
+      "time": {
+        "val": "2017-06-06"
+      },
+      "pic": "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3896712192,3832180398&fm=26&gp=0.jpg"
+    }
+  },
+  "user_info": {
+    "data": {
+      "current_address": "重庆天地雍江艺庭1栋3604房",
+      "extra_money": "1750",
+      "arrearage": "2000",
+      "new_service": 2,
+      "new_order": 3,
+      "new_publish": 4,
+      "new_storeup": 0
+    }
+  },
+  "myhouse": {
+    "data": [
+      {
+        "position": {
+          "desc": "重庆天地雍江艺庭1栋3604房"
+        },
+        "type": {
+          "val": "3室一厅"
+        },
+        "area": {
+          "val": "100"
+        },
+        "owner": {
+          "val": "100"
+        },
+        "family": [
+          {
+            "name": "李四",
+            "isowner": 1,
+            "ischecked": 1
+          },
+          {
+            "name": "王五",
+            "isowner": 2,
+            "ischecked": 0
+          }
+        ],
+        "isowner": 1
+      },
+      {
+        "position": {
+          "desc": "重庆天地雍江艺庭3栋3605房"
+        },
+        "type": {
+          "val": "3室一厅"
+        },
+        "area": {
+          "val": "100"
+        },
+        "owner": {
+          "val": "100"
+        },
+        "family": [
+          {
+            "name": "李四",
+            "isowner": 1,
+            "ischecked": 1
+          },
+          {
+            "name": "王五",
+            "isowner": 2,
+            "ischecked": 0
+          }
+        ],
+        "isowner": 1
+      }
+    ]
+  },
+  "devicelist": {
+    "data": [
+      {
+        "name": "主卧",
+        "items": [
+          {
+            "name": "电视机",
+            "brand": "品牌：三星s6011",
+            "time": "保修期：2016-05-29至2018-05-29"
+          },
+          {
+            "name": "空调",
+            "brand": "品牌：三星s6011",
+            "time": "保修期：2016-05-29至2018-05-29"
+          },
+          {
+            "name": "热水器",
+            "brand": "品牌：三星s6011",
+            "time": "保修期：2016-05-29至2018-05-29"
+          }
+        ]
+      },
+      {
+        "name": "次卧",
+        "items": [
+          {
+            "name": "电视机",
+            "brand": "品牌：三星s6011",
+            "time": "保修期：2016-05-29至2018-05-29"
+          },
+          {
+            "name": "空调",
+            "brand": "品牌：三星s6011",
+            "time": "保修期：2016-05-29至2018-05-29"
+          },
+          {
+            "name": "热水器",
+            "brand": "品牌：三星s6011",
+            "time": "保修期：2016-05-29至2018-05-29"
+          }
+        ]
+      }
+    ]
+  },
+  "houseinfo": {
+    "data": {
+      "position": "武汉B14区1栋0201房",
+      "area": "112",
+      "starttime": "2016-05-25",
+      "endtime": "2016-05-25",
+      "phone": "18271654878"
+    }
+  },
+  "rent": {
+    "data": {
+      "area": "120",
+      "housetype": "3室一厅",
+      "pricelow": "220W",
+      "pricehigh": "230W",
+      "remark": "这是一套啥房子",
+      "picurls": []
+    }
+  },
+  "trust": {
+    "data": {
+      "type": "",
+      "area": "112",
+      "remark": "这是一套啥房子",
+      "picurls": []
+    }
+  },
+  "newsIndex": {
+    "data": [
+      {
+        "picture": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1497347507233&di=3c90bf8ed0bae85111c808bb6d738c37&imgtype=0&src=http%3A%2F%2Fp5.zbjimg.com%2Ftask%2F2012-08%2F10%2F1924078%2Flarge50251885f028a.jpg",
+        "url":"http://www.baidu.com"
+      },
+      {
+        "picture": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1497347642104&di=7d60ff0386a8edf18e579a014e615332&imgtype=0&src=http%3A%2F%2Fimg3.redocn.com%2F20140111%2F20140110_c389af77ea67af633ff2OtvGEiYPim4T.jpg",
+        "url":"http://www.hao123.com"
+      },
+      {
+        "picture": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1497347680408&di=bb335ab3c50e27a5ef04034861f2617e&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F01adbf554b40ed000001bf722da621.jpg",
+        "url":"http://www.sina.com"
+      },
+      {
+        "picture": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1497347715776&di=30691cdc4ee4f80d6186b48b1b9d2f73&imgtype=0&src=http%3A%2F%2Fimg.sccnn.com%2Fbimg%2F339%2F12897.jpg",
+        "url":"http://www.wangyiyun.com"
+      }
+    ]
+  },
+  "notice_list": {
+    "data": [],
+    "currentid": 1,
+    "servertime": 1497599951166,
+    "lastid": "",
+    "message": "报名成功",
+    "items": [
+      {
+        "noticeid": {
+          "val": "3",
+          "desc": ""
+        },
+        "title": {
+          "val": "儿童节亲子活动",
+          "desc": ""
+        },
+        "content": {
+          "val": "六一儿童节即将来临，小区将举办亲子活动，欢迎大家踊跃参加！",
+          "desc": ""
+        },
+        "createby": {
+          "val": "",
+          "desc": "狐狸"
+        },
+        "startdate": {
+          "val": "1497435962000",
+          "desc": ""
+        },
+        "isnotice": {
+          "val": "2",
+          "desc": ""
+        }
+      },
+      {
+        "noticeid": {
+          "val": "2",
+          "desc": ""
+        },
+        "title": {
+          "val": "这周停水停电，请用户知悉！",
+          "desc": ""
+        },
+        "content": {
+          "val": "因为在修路，把水管子电线都挖断了，所以只能停水停电了。",
+          "desc": ""
+        },
+        "createby": {
+          "val": "",
+          "desc": "狐狸"
+        },
+        "startdate": {
+          "val": "1496802539000",
+          "desc": ""
+        },
+        "isnotice": {
+          "val": "1",
+          "desc": ""
+        }
+      },
+      {
+        "noticeid": {
+          "val": "1",
+          "desc": ""
+        },
+        "title": {
+          "val": "周末组织爬山，目标珠穆朗玛峰。",
+          "desc": ""
+        },
+        "content": {
+          "val": "不要怂就是干。",
+          "desc": ""
+        },
+        "createby": {
+          "val": "",
+          "desc": "狐狸"
+        },
+        "startdate": {
+          "val": "1496802379000",
+          "desc": ""
+        },
+        "isnotice": {
+          "val": "2",
+          "desc": ""
+        }
+      }
+    ],
+    "picurls": [],
+    "content": "",
+    "status": "ok",
+    "statusCode": "ok"
+  },
+  "notice_detail": {
+    "data": {
+      "title": {
+        "val": "儿童节亲子活动",
+        "desc": ""
+      },
+      "picurl": {
+        "val": "http://fengcheng.fm-community.com.cn",
+        "desc": ""
+      },
+      "content": {
+        "val": "春意盎然鹏城美，百人远足笔架山。为增强我校教工的坚持锻炼身体的健康意识，营造团结协助、和谐发展的团队精神，展现教职工队伍昂扬奋进的精神风貌，在春意盎然之际，我校将于“五一”、“五四”前夕，组织全体教工开展登山活动，本次登山活动的具体方案如下：↵　　一、活动主题：春意盎然鹏城美 百人远足笔架山↵　　二、活动时间：4月30日下午15：20从学校出发。↵　　三、参加人员：全体教职员工。↵　　四、登山地点：笔架山公园笔架山。",
+        "desc": ""
+      },
+      "startdate": {
+        "val": "1497435962000",
+        "desc": ""
+      },
+      "createby": {
+        "val": "",
+        "desc": "狐狸"
+      },
+      "isnotice": {
+        "val": "2",
+        "desc": ""
+      },
+      "maxnum": {
+        "val": "",
+        "desc": ""
+      },
+      "num": {
+        "val": "0",
+        "desc": ""
+      },
+      "isenroll": {
+        "val": "2",
+        "desc": ""
+      }
+    },
+    "currentid": 1,
+    "servertime": 1497603624166,
+    "lastid": "",
+    "message": "报名成功",
+    "picurls": [
+      {
+        "val": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1497614972850&di=056e65ac66ee3eae737489e8596731ed&imgtype=0&src=http%3A%2F%2Fpic16.nipic.com%2F20110927%2F1948329_182420046350_2.jpg"
+      }
+    ],
+    "content": "",
+    "status": "ok",
+    "statusCode": "ok"
+  },
+  "my_service": {
+    "nextdata": 5,
+    "data": [
+      {
+        "type": {
+          "val": "0",
+          "desc": "报事报修"
+        },
+        "srid": {
+          "val": "37",
+          "desc": ""
+        },
+        "detaildesc": {
+          "val": "",
+          "desc": "地板砖破裂，急需修理。而且该品牌地板砖太滑，希望能换个不一样的。"
+        },
+        "servicehistory": {
+          "val": "CLOSED",
+          "desc": "已关闭"
+        },
+        "createtime": {
+          "val": "2017-06-27 09:57:16",
+          "desc": ""
+        }
+      },
+      {
+        "type": {
+          "val": "0",
+          "desc": "报事报修"
+        },
+        "srid": {
+          "val": "35",
+          "desc": ""
+        },
+        "detaildesc": {
+          "val": "",
+          "desc": "需要维修。"
+        },
+        "servicehistory": {
+          "val": "CLOSED",
+          "desc": "已关闭"
+        },
+        "createtime": {
+          "val": "2017-06-25 19:24:31",
+          "desc": ""
+        }
+      },
+      {
+        "type": {
+          "val": "0",
+          "desc": "报事报修"
+        },
+        "srid": {
+          "val": "34",
+          "desc": ""
+        },
+        "detaildesc": {
+          "val": "",
+          "desc": "恩"
+        },
+        "servicehistory": {
+          "val": "CLOSED",
+          "desc": "已关闭"
+        },
+        "createtime": {
+          "val": "2017-06-25 19:23:37",
+          "desc": ""
+        }
+      },
+      {
+        "type": {
+          "val": "0",
+          "desc": "报事报修"
+        },
+        "srid": {
+          "val": "20",
+          "desc": ""
+        },
+        "detaildesc": {
+          "val": "",
+          "desc": "土太多堵路辣"
+        },
+        "servicehistory": {
+          "val": "CLOSED",
+          "desc": "已关闭"
+        },
+        "createtime": {
+          "val": "2017-06-21 15:34:58",
+          "desc": ""
+        }
+      },
+      {
+        "type": {
+          "val": "0",
+          "desc": "报事报修"
+        },
+        "srid": {
+          "val": "12",
+          "desc": ""
+        },
+        "detaildesc": {
+          "val": "",
+          "desc": "土堆太多赶紧清理一下，堵路啦"
+        },
+        "servicehistory": {
+          "val": "CLOSED",
+          "desc": "已关闭"
+        },
+        "createtime": {
+          "val": "2017-06-20 09:18:34",
+          "desc": ""
+        }
+      }
+    ]
+  },
+  "enroll":{
+    "id":18,
+    "nid":36,
+    "nname":"张三",
+    "nphone":"13454687869",
+    "adultcount":3,
+    "childcount":1,
+    "remark":"这是一个描述性的内容"
   }
 }
+

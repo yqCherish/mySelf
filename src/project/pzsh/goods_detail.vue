@@ -1,7 +1,7 @@
 <template>
   <div class="body_background">
-    <loading style="text-align: center;" v-if="loading"></loading>
-    <div v-else>
+    <!--<loading style="text-align: center;" v-if="loading"></loading>-->
+    <div>
       <div class="padding_bottom">
         <Swiper :list="swiper_imgs" :index="swiper_index" @on-index-change="swiperChange" height="300px"></Swiper>
         <div class="describe body_white">
@@ -21,7 +21,7 @@
             <div v-if="index==0">
               <div class="tw_detail">
                 <div class="w_detail margin_bottom">
-                  <pre>{{desc}}</pre>
+                  {{desc}}
                 </div>
                 <div><img v-for="item in detailimgs" :src="item" class="object_fit"/></div>
               </div>
@@ -47,7 +47,7 @@
             <div class="img_border">
               <div style="width:90px;height:90px;"><img
                 class="object_fit"
-                src="http://pic.qiantucdn.com/58pic/14/59/28/74A58PICIrd_1024.jpg"/>
+                :src="alert_img"/>
               </div>
             </div>
             <div style="display:inline-block;vertical-align: top;padding:10px;font-size:13px">
@@ -86,11 +86,21 @@
         </div>
       </div>
     </div>
+    <alert v-model="confirm_show" :title="dialog_title"> {{confirm_content}}</alert>
+    <confirm v-model="show"
+             :title="confirm_title"
+             cancelText="继续浏览"
+             :confirmText="next_text"
+             @on-confirm="onConfirm">
+      <p style="text-align:center;">{{confirm_text}}</p>
+    </confirm>
+    <loading v-model="isLoading" :text="alert_text"></loading>
+    <toast v-model="show_toast">{{toast_text}}</toast>
   </div>
 </template>
 
 <script>
-  import Loading from '@/components/loading/dataLoading'
+  import {setTitle} from '@/common/js/common';
   import {
     Tab,
     TabItem,
@@ -103,7 +113,11 @@
     Actionsheet,
     Checker,
     CheckerItem,
-    XNumber
+    XNumber,
+    Alert,
+    Confirm,
+    Loading,
+    Toast
   } from 'vux'
 
   const list = () => ['图文描述', '评价内容']
@@ -112,7 +126,7 @@
     name: 'goods_detail',
     data(){
       return {
-        loading: true,//加载
+        isLoading:false,
         swiper_imgs: [],//商品图片
         swiper_index: 0,//当前切换到哪张图片
         cell_title: "选择规格和数量",
@@ -139,67 +153,82 @@
         select_stock:'',
         click_button:'',
         model_id:'',
-        this_price:0
+        this_price:0,
+        confirm_show:false,
+        dialog_title:"",
+        confirm_content:"",
+        alert_img:"",
+        show:false,
+        confirm_text:"",
+        confirm_title:"操作成功",
+        alert_text:"操作中",
+        next_text:"",
+        show_toast:false,
+        toast_text:""
       }
     },
     mounted(){
+      setTitle("商品详情");
       let self = this;
       this.goods_id=this.$route.query.id;
-      /*this.$http.get('/api/goodsDetails').then((data) => {
-        self.swiper_imgs = data.body.data.wximgs;
-        self.goods_name = data.body.data.name;
-        self.max_price = data.body.data.max_price;
-        self.min_price = data.body.data.price;
-        self.sale_num = data.body.data.sale_num;
-        self.models = data.body.data.models;
-        self.evaluate = data.body.data.evaluate;
-        self.desc = data.body.data.desc;
-        self.detailimgs = data.body.data.detailimgs;
-        self.store_id = data.body.data.store_id;
-        self.goods_id = data.body.data.goods_id;
-        self.tel = data.body.data.tel;
-        self.trolley = data.body.data.trolley;
-      }, () => {
-        console.log(2);
-      });*/
-      const senddata = {
-        "goods_id":this.goods_id
-      };
-      this.$http.post(service_url+'/o2o/shop/wx/goodinfo.do',senddata).then((data) => {
-        self.swiper_imgs = data.body.fields.wximgs;
-        self.goods_name = data.body.fields.name;
-        self.max_price = data.body.fields.max_price;
-        self.min_price = data.body.fields.price;
-        self.sale_num = data.body.fields.sale_num;
-        self.models = data.body.fields.models;
-        self.evaluate = data.body.fields.evaluate;
-        self.desc = data.body.fields.desc;
-        self.detailimgs = data.body.fields.detailimgs;
-        self.store_id = data.body.fields.store_id;
-//        self.goods_id = data.body.fields.goods_id;
-        self.tel = data.body.fields.tel;
-        self.trolley = data.body.fields.trolley;
-        if(self.max_price===self.min_price){
-          self.this_price=self.max_price;
-        }else{
-          self.this_price=self.min_price+'~'+self.max_price;
-        }
-      });
-
-      this.loading = false;
+      if(service_url){
+        const senddata = {
+         "goods_id":this.goods_id
+         };
+         this.$http.post(service_url+'/o2o/shop/wx/goodinfo.do',senddata).then((data) => {
+         self.swiper_imgs = data.body.fields.wximgs;
+         self.alert_img = data.body.fields.wximgs[0].img;
+         self.goods_name = data.body.fields.name;
+         self.max_price = data.body.fields.max_price;
+         self.min_price = data.body.fields.price;
+         self.sale_num = data.body.fields.sale_num;
+         self.models = data.body.fields.models;
+         self.evaluate = data.body.fields.evaluate;
+         self.desc = data.body.fields.desc;
+         self.detailimgs = data.body.fields.detailimgs;
+         self.store_id = data.body.fields.store_id;
+         //        self.goods_id = data.body.fields.goods_id;
+         self.tel = data.body.fields.tel;
+         self.trolley = data.body.fields.trolley;
+         if(self.max_price===self.min_price){
+         self.this_price=self.max_price;
+         }else{
+         self.this_price=self.min_price+'~'+self.max_price;
+         }
+         });
+      }else{
+        this.$http.get('/api/goodsDetails').then((data) => {
+          self.swiper_imgs = data.body.data.wximgs;
+          self.alert_img = data.body.data.wximgs[0].img;
+          self.goods_name = data.body.data.name;
+          self.max_price = data.body.data.max_price;
+          self.min_price = data.body.data.price;
+          self.sale_num = data.body.data.sale_num;
+          self.models = data.body.data.models;
+          self.evaluate = data.body.data.evaluate;
+          self.desc = data.body.data.desc;
+          self.detailimgs = data.body.data.detailimgs;
+          self.store_id = data.body.data.store_id;
+          self.goods_id = data.body.data.goods_id;
+          self.tel = data.body.data.tel;
+          self.trolley = data.body.data.trolley;
+        }, () => {
+          console.log(2);
+        });
+      }
+      document.getElementById("index_loading").style.display="none";
     },
     directives: {
       TransferDom
     },
     components: {
-      Loading, Group, Cell, Actionsheet, Popup, Checker, CheckerItem, XNumber, Tab, TabItem, Swiper, SwiperItem
+      Loading, Group, Cell, Actionsheet, Popup, Checker, CheckerItem, XNumber, Tab, TabItem, Swiper, SwiperItem, Alert,Confirm,Toast
     },
     methods: {
       swiperChange(index){
         this.swiper_index = index
       },
       showActionsheet(mark){
-          console.info(mark);
         this.popup_model = true;
         this.click_button=mark;
       },
@@ -215,6 +244,13 @@
                 this.model_id=this.models[i].modelid;
               }
           }
+      },
+      onConfirm(){
+        if(this.click_button===1){
+          this.$router.push({path:"common_order/3"})
+        }else if(this.click_button===2){
+          this.$router.push({path:"store_up",query:{type:2}})
+        }
       },
       addCar(){
           this.confirm_buy(2);
@@ -234,16 +270,20 @@
           }
         };
         this.$http.post(service_url+'/o2o/shop/wx/deletecollect.do',collectdata).then( (data)=> {
-          alert("取消成功");
+          this.dialog_title="提示";
+          this.confirm_content="取消关注成功";
+          this.confirm_show=true;
           self.trolley=0;
         })
       },
       confirm_buy(num){
-          console.log(num);
-          let self =this;
+        let self =this;
         if(num!==3&&!this.choose_item){
-            alert("请选择规格");
+          this.dialog_title="提示";
+          this.confirm_content="请选择规格";
+          this.confirm_show=true;
         }else{
+          this.isLoading=true;
           const senddata = {
             "data": [{
                   "goods_id":this.goods_id,
@@ -266,33 +306,69 @@
               }
           };
           /* click_button 1下单  2加入购物车  0选择商品*/
-          console.log(this.click_button);
           if(this.click_button===1||num===1){
-            this.$http.post(service_url+'/o2o/shop/wx/downorder.do',senddata).then( (data)=> {
-//              this.$router.push({ path: '/store_up',query:{"type":1} });
-              if(data.body.status===0){
-                alert("下单成功");
+              this.next_text="进入订单";
+              if(service_url){
+                this.$http.post(service_url+'/o2o/shop/wx/downorder.do',senddata).then( (data)=> {
+                  this.isLoading=false;
+                  if(data.body.status===0){
+//                    this.show=true;
+//                    this.confirm_text="您可以选择继续浏览或者进入订单查看";
+                    this.toast_text="下单成功";
+                    this.show_toast=true;
+                    this.$router.push({path:"goods_order",query:{type:1,ordernum:data.body.ordernums}});
+                  }else{
+                    this.dialog_title="提示";
+                    this.confirm_content=data.body.error_reason;
+                    this.confirm_show=true;
+                  }
+                })
               }else{
-                  alert(data.body.error_reason);
+                this.isLoading=false;
+                this.$router.push({path:"goods_order",query:{type:1}});
               }
-            })
           }else if(this.click_button===2||num===2){
-            this.$http.post(service_url+'/o2o/shop/wx/insertcar.do',insertData).then( (data)=> {
-              if(data.body.status===0){
-                alert("加入购物车成功");
+              this.next_text="进入购物车";
+              if(service_url){
+                this.$http.post(service_url+'/o2o/shop/wx/insertcar.do',insertData).then( (data)=> {
+                  this.isLoading=false;
+                  if(data.body.status===0){
+                    this.show=true;
+                    this.confirm_text="您可以选择继续浏览或者进入购物车查看";
+                  }else{
+                    this.dialog_title="提示";
+                    this.confirm_content=data.body.error_reason;
+                    this.confirm_show=true;
+                  }
+                })
               }else{
-                alert(data.body.error_reason);
+                this.isLoading=false;
+                this.show=true;
+                this.confirm_text="您可以选择继续浏览或者去订单查看"
               }
-            })
+
           }else if(num===3){
-            this.$http.post(service_url+'/o2o/shop/wx/insertcollection.do',collectData).then( (data)=> {
-              if(data.body.status===0){
-                  self.trolley=1;
-                alert("收藏成功");
+              if(service_url){
+                this.$http.post(service_url+'/o2o/shop/wx/insertcollection.do',collectData).then( (data)=> {
+                  this.isLoading=false;
+                  if(data.body.status===0){
+                    self.trolley=1;
+                    this.dialog_title="提示";
+                    this.confirm_content="收藏成功，您可以进入个人中心--我的关注查看";
+                    this.confirm_show=true;
+                  }else{
+                    this.dialog_title="提示";
+                    this.confirm_content=data.body.error_reason;
+                    this.confirm_show=true;
+                  }
+                })
               }else{
-                alert(data.body.error_reason);
+                this.isLoading=false;
+                self.trolley=1;
+                this.dialog_title="提示";
+                this.confirm_content="收藏成功，您可以进入个人中心--我的关注查看";
+                this.confirm_show=true;
               }
-            })
           }
           this.popup_model = false;
         }

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>老铁</title>
+    <style type="text/css">
+      .red{
+        color:red;
+      }
+    </style>
+</head>
+<body>
+<ul id="test">
+  <li>居然</li>
+  <li>不回</li>
+  <li>消息</li>
+</ul>
+<div id="add"></div>
+</body>
+<script type="text/javascript">
+/*第一个导航切换*/
+  var tabBox = document.getElementById("test");
+  var tab_li = tabBox.getElementsByTagName("li");
+
+  for(var a=0;a<tab_li.length;a++){
+    tab_li[a].onclick=function(){
+      for(var b=0;b<tab_li.length;b++){
+        removeClass(tab_li[b],"red");
+      }
+      toggleClass(this,"red");
+    }
+  }
+
+  function addClass(obj, cls) {
+    if (!this.hasClass(obj, cls)) obj.className += " " + cls;
+  }
+
+  function hasClass(obj, cls) {
+    return obj.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));
+  }
+
+  function removeClass(obj, cls) {
+    if (hasClass(obj, cls)) {
+      var reg = new RegExp('(\\s|^)' + cls + '(\\s|$)');
+      obj.className = obj.className.replace(reg, ' ');
+    }
+  }
+
+  function toggleClass(obj,cls){
+    if(hasClass(obj,cls)){
+      removeClass(obj, cls);
+    }else{
+      addClass(obj, cls);
+    }
+  }
+
+</script>
+<script>
+  /*第二个*/
+  document.getElementById("add").innerHTML="老铁啊，搞定了";
+</script>
+</html>

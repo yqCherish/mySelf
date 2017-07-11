@@ -28,6 +28,47 @@ var goodsDetails = appData.goodsDetails;
 var goodsOrder = appData.goodsOrder;
 var goodsOrderList = appData.goodsOrderList;
 var goodsIndex = appData.goodsIndex;
+var marketDetail = appData.marketDetail;
+var myPublished = appData.myPublished;
+var published_detail = appData.published_detail;
+var qj_index = appData.qj_index;
+var area_index = appData.area_index;
+var area_detail = appData.area_detail;
+var myCardList = appData.myCardList;
+var club_order_list = appData.club_order_list;
+var my_vip = appData.my_vip;
+var club_order_detail = appData.club_order_detail;
+var area_choose_date = appData.area_choose_date;
+var area_choose_area = appData.area_choose_area;
+var area_choose_time = appData.area_choose_time;
+var area_evaluate = appData.area_evaluate;
+var door_list = appData.door_list;
+var tenant_list = appData.tenant_list;
+var my_code = appData.my_code;
+var code_share = appData.code_share;
+var family_list = appData.family_list;
+var service_detail = appData.service_detail;
+var wb_detail = appData.wb_detail;
+var wb_order_detail = appData.wb_order_detail;
+var wb_reserve = appData.wb_reserve;
+var wb_bj = appData.wb_bj;
+var wb_order_list = appData.wb_order_list;
+var my_paylist = appData.my_paylist;
+var wallet_record = appData.wallet_record;
+var wallet_code = appData.wallet_code;
+var getVillage = appData.getVillage;
+var myinfo = appData.myinfo;
+var user_info = appData.user_info;
+var myhouse = appData.myhouse;
+var devicelist = appData.devicelist;
+var houseinfo = appData.houseinfo;
+var rent = appData.rent;
+var trust = appData.trust;
+var newsIndex = appData.newsIndex;
+var notice_list = appData.notice_list;
+var notice_detail = appData.notice_detail;
+var my_service = appData.my_service;
+var enroll = appData.enroll;
 
 var apiRoutes = express.Router();
 apiRoutes.get('/goodsDetails',function(req,res){
@@ -35,27 +76,265 @@ apiRoutes.get('/goodsDetails',function(req,res){
     errno:0,
     data:goodsDetails
   })
-})
+});
 
 apiRoutes.get('/goodsOrder',function(req,res){
   res.json({
     errno:0,
     data:goodsOrder
   })
-})
+});
 
 apiRoutes.get('/goodsOrderList',function(req,res){
   res.json({
     errno:0,
     data:goodsOrderList
   })
-})
+});
 apiRoutes.get('/goodsIndex',function(req,res){
   res.json({
     errno:0,
     data:goodsIndex
   })
-})
+});
+apiRoutes.get('/marketDetail',function(req,res){
+  res.json({
+    errno:0,
+    data:marketDetail
+  })
+});
+apiRoutes.get('/myPublished',function(req,res){
+  res.json({
+    errno:0,
+    data:myPublished
+  })
+});
+apiRoutes.get('/published_detail',function(req,res){
+  res.json({
+    errno:0,
+    data:published_detail
+  })
+});
+apiRoutes.get('/qj_index',function(req,res){
+  res.json({
+    errno:0,
+    data:qj_index
+  })
+});apiRoutes.get('/area_index',function(req,res){
+  res.json({
+    errno:0,
+    data:area_index
+  })
+});apiRoutes.get('/area_detail',function(req,res){
+  res.json({
+    errno:0,
+    data:area_detail
+  })
+});apiRoutes.get('/club_order_list',function(req,res){
+  res.json({
+    errno:0,
+    data:club_order_list
+  })
+});apiRoutes.get('/my_vip',function(req,res){
+  res.json({
+    errno:0,
+    data:my_vip
+  })
+});
+apiRoutes.get('/club_order_detail',function(req,res){
+  res.json({
+    errno:0,
+    data:club_order_detail
+  })
+});apiRoutes.get('/area_choose_time',function(req,res){
+  res.json({
+    errno:0,
+    data:area_choose_time
+  })
+});apiRoutes.get('/area_choose_area',function(req,res){
+  res.json({
+    errno:0,
+    data:area_choose_area
+  })
+});apiRoutes.get('/myCardList',function(req,res){
+  res.json({
+    errno:0,
+    data:myCardList
+  })
+});apiRoutes.get('/area_choose_date',function(req,res){
+  res.json({
+    errno:0,
+    data:area_choose_date
+  })
+});
+apiRoutes.get('/area_evaluate',function(req,res){
+  res.json({
+    errno:0,
+    data:area_evaluate
+  })
+});
+apiRoutes.get('/door_list',function(req,res){
+  res.json({
+    errno:0,
+    data:door_list
+  })
+});
+apiRoutes.get('/tenant_list',function(req,res){
+  res.json({
+    errno:0,
+    data:tenant_list
+  })
+});
+apiRoutes.get('/family_list',function(req,res){
+  res.json({
+    errno:0,
+    data:family_list
+  })
+});
+apiRoutes.get('/service_detail',function(req,res){
+  res.json({
+    errno:0,
+    data:service_detail
+  })
+});
+apiRoutes.get('/wb_detail',function(req,res){
+  res.json({
+    errno:0,
+    data:wb_detail
+  })
+});
+apiRoutes.get('/wb_order_detail',function(req,res){
+  res.json({
+    errno:0,
+    data:wb_order_detail
+  })
+});
+apiRoutes.get('/wb_reserve',function(req,res){
+  res.json({
+    errno:0,
+    data:wb_reserve
+  })
+});
+apiRoutes.get('/wb_bj',function(req,res){
+  res.json({
+    errno:0,
+    data:wb_bj
+  })
+});
+apiRoutes.get('/wb_order_list',function(req,res){
+  res.json({
+    errno:0,
+    data:wb_order_list
+  })
+});
+apiRoutes.get('/my_code',function(req,res){
+  res.json({
+    errno:0,
+    data:my_code
+  })
+});
+apiRoutes.get('/code_share',function(req,res){
+  res.json({
+    errno:0,
+    data:code_share
+  })
+});
+apiRoutes.get('/my_paylist',function(req,res){
+  res.json({
+    errno:0,
+    data:my_paylist
+  })
+});
+apiRoutes.get('/wallet_record',function(req,res){
+  res.json({
+    errno:0,
+    data:wallet_record
+  })
+});
+apiRoutes.get('/wallet_code',function(req,res){
+  res.json({
+    errno:0,
+    data:wallet_code
+  })
+});
+apiRoutes.get('/getVillage',function(req,res){
+  res.json({
+    errno:0,
+    data:getVillage
+  })
+});
+apiRoutes.get('/myinfo',function(req,res){
+  res.json({
+    errno:0,
+    data:myinfo
+  })
+});
+apiRoutes.get('/user_info',function(req,res){
+  res.json({
+    errno:0,
+    data:user_info
+  })
+});
+apiRoutes.get('/myhouse',function(req,res){
+  res.json({
+    errno:0,
+    data:myhouse
+  })
+});
+apiRoutes.get('/devicelist',function(req,res){
+  res.json({
+    errno:0,
+    data:devicelist
+  })
+});
+apiRoutes.get('/houseinfo',function(req,res){
+  res.json({
+    errno:0,
+    data:houseinfo
+  })
+});
+apiRoutes.get('/rent',function(req,res){
+  res.json({
+    errno:0,
+    data:rent
+  })
+});
+apiRoutes.get('/trust',function(req,res){
+  res.json({
+    errno:0,
+    data:trust
+  })
+});
+apiRoutes.get('/newsIndex',function(req,res){
+  res.json({
+    errno:0,
+    data:newsIndex
+  })
+});
+apiRoutes.get('/notice_list',function(req,res){
+  res.json({
+    errno:0,
+    data:notice_list
+  })
+});
+apiRoutes.get('/notice_detail',function(req,res){
+  res.json({
+    errno:0,
+    data:notice_detail
+  })
+});
+apiRoutes.get('/my_service',function(req,res){
+  res.json({
+    errno:0,
+    data:my_service
+  })
+});
+apiRoutes.get('/enroll',function(req,res){
+  res.json({
+    errno:0,
+    data:enroll
+  })
+});
 app.use('/api',apiRoutes);
 
 

@@ -1,0 +1,103 @@
+.weui_cells_checkbox .weui_icon_checked:before {
+    content: '\EA01';
+}
+.weui_cells_checkbox .weui_check:checked+.weui_icon_checked:before {
+    color: #6c3db5;
+}
+.cell_title{
+    border-bottom:1px solid #e5e5e5
+}
+.this_rotate{
+    -moz-transform:rotate(90deg);
+    -webkit-transform:rotate(90deg);
+    filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+.second_font{
+    font-size:14px;
+}
+.third_font{
+    font-size:13px;
+}
+.third_font_margin{
+    margin-top:.3rem;
+}
+.fourth_font{
+    font-size:12px;
+}
+.fourth_font_color{
+    color:#10aeff;
+}
+.font_bold{
+    font-weight:600;
+}
+.border-purple{
+    border-radius:10%;
+    border:1px solid purple;
+    padding:.1rem .2rem;
+    color:purple;
+    margin:.3rem 1rem;
+}
+.weui_flex{
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
+}
+.color_purple{
+    background-color:purple;
+}
+.this_cell_ft{
+    height:2rem;
+
+}
+.this_cell_ft img{
+    height:2rem;
+    vertical-align: super;
+}
+.second_font .weui_cell:first-child:before{
+    display:block;
+}
+.this_flex_1{
+    flex:1
+}
+.this_flex_1 button{
+    margin:.3rem 0;
+}
+.this_flex_2{
+    flex:2
+}
+.this_flex_2 p{
+    margin:.8rem 0;
+}
+.text_right{
+    text-align:right;
+}
+.text_center{
+    text-align:center;
+}
+.this_paddng{
+    padding:.2rem;
+}
+.button_fixed{
+    width: 100%;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+/*访客二维码*/
+.fk_outer_div{
+    width:80%;
+    margin:2rem auto 1rem;
+    border:1px solid #999;
+}
+.fk_outer_div .inner_div_1{
+    padding:0rem;
+}
+.fk_outer_div .inner_div_2{
+    padding:0 3rem 1rem 3rem
+}
+.outer_padding{
+    padding-bottom:3.5rem;
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+    <title>Title</title>
+</head>
+<body>
+  <div>
+    <button id="button1">第一个</button>
+    <button id="button2">第二个</button>
+    <button id="button3">第三个</button>
+    <button id="button4">第四个</button>
+    <button id="button5">第五个</button>
+  </div>
+  <script type="text/javascript">
+    for(let i = 0;i<$("button").length;i++){
+        console.log("#button"+(i+1));
+        $("#button"+(i+1)).click(function(){
+            alert("第"+(i+1)+"个按钮")
+        })
+    }
+  </script>
+</body>
+</html>

@@ -6,13 +6,18 @@ module.exports = {
     env: require('./prod.env'),
     index: path.resolve(__dirname, '../dist/index.html'),
     assetsRoot: path.resolve(__dirname, '../dist'),
-    assetsSubDirectory: './static',
-    assetsPublicPath: './',
+    //发布
+    assetsSubDirectory: 'static',
+    assetsPublicPath: '../',
+
+    //本地
+    // assetsSubDirectory: './static',
+    // assetsPublicPath: '/',
     productionSourceMap: true,
     // Gzip off by default as many popular static hosts such as
     // Surge or Netlify already gzip all static assets for you.
     // Before setting to `true`, make sure to:
-    // npm install --save-dev compression-webpack-plugin
+    // npm install --save-dev compression-webpack-pluginpp
     productionGzip: false,
     productionGzipExtensions: ['js', 'css'],
     // Run the build command with an extra argument to
@@ -23,7 +28,7 @@ module.exports = {
   },
   dev: {
     env: require('./dev.env'),
-    port: 8888,
+    port: 8889,
     autoOpenBrowser: true,
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',

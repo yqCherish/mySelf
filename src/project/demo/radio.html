@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>改变radio默认样式</title>
+  <style>
+    dd {
+      float:left;
+      line-height:37px;
+    }
+    dd:nth-child(3n+1) {
+      text-align:right;
+      width:164px;
+    }
+    input[type="radio"]{
+      display:none;
+    }
+    input[type="radio"]+label{
+      position:relative;
+      padding-left:30px;
+      line-height:20px;
+      color:#333;
+      font-weight:normal;
+      margin-left:2px;
+    }
+    label {
+      display:inline-block;
+      max-width:100%;
+      margin-bottom:5px;
+      font-weight:700;
+    }
+    input[type="radio"]+label::before {
+      content:"";
+      width:20px;
+      height:20px;
+      border-radius:20px;
+      border:1px solid #cecece;
+      position:absolute;
+      left:0;
+    }
+    input[type="radio"]:checked+label::after {
+      top:5px;
+      left:5px;
+      content:"";
+      background-color:#58B094;
+      width:12px;
+      height:12px;
+      border-radius:12px;
+      position:absolute;
+      vertical-align:middle;
+    }
+  </style>
+</head>
+<body>
+<dl>
+  <dd>广告类型：</dd>
+  <dd>
+    <input id="adType1" name="adType" type="radio" value="1">
+    <label for="adType1"></label>
+    <input id="adType2" name="adType" type="radio" value="2" checked="checked">
+    <label for="adType2"></label>
+    <input id="adType3" name="adType" type="radio" value="3">
+    <label for="adType3"></label>
+    <input id="adType4" name="adType" type="radio" value="4">
+    <label for="adType4"></label>
+    <input id="adType5" name="adType" type="radio" value="5">
+    <label for="adType5"></label>
+  </dd>
+  <dd></dd>
+</dl>
+</body>
+</html>

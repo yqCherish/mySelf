@@ -1,91 +1,48 @@
 <template>
   <div>
-    <search style="position:fixed;top:0;z-index:1" @result-click="resultClick" @on-change="getResult" :results="results" v-model="value" position="fixed" auto-scroll-to-top top="0" @on-focus="onFocus" @on-cancel="onCancel"></search>
-    <Loading v-if="loading"></Loading>
-    <Scroller :on-refresh="onRefresh" :on-infinite="onInfinite">
-      <swiper loop auto :list="demo06_list" :index="demo06_index" @on-index-change="demo06_onIndexChange"></swiper>
-      <div class="weui_flex" style="font-size:14px">
-        <div class="flex_tab f_flex f_ac f_vc" style="color:#10aeff">
-          <div style="padding:5px" @click="showActionsheet2">{{current_rack}}</div>
-          <i class="arrow"></i>
+    <!--<Loading v-if="loading"></Loading>-->
+    <div>
+      <search  style="position:fixed;top:0;z-index:1" @on-submit="onSubmit" v-model="value2" @on-focus="onFocus" @on-cancel="onCancel"></search>
+      <Scroller :on-refresh="onRefresh" :on-infinite="onInfinite">
+        <swiper auto :aspect-ratio="400/750">
+          <swiper-item class="swiper-demo-img" v-for="(item, index) in demo06_list" :key="index" @click.native="go_link(item.url,item.id)"><img style="height:100%;width:100%;object-fit: cover;" :src="item.picture"></swiper-item>
+        </swiper>
+        <div class="weui_flex" style="font-size:14px">
+          <div class="flex_tab f_flex f_ac f_vc" style="color:#ad7de7">
+            <div style="padding:5px" @click="showActionsheet2">{{current_rack}}</div>
+            <i class="arrow"></i>
+          </div>
+          <div class="flex_tab f_flex f_ac f_vc" style="color:#ad7de7">
+            <div style="padding:5px" @click="showActionsheet">{{current_sort}}</div>
+            <i class="arrow"></i>
+          </div>
+        </div><load-more v-if="totalpage===0" :show-loading="false" tip="暂无商品数据" background-color="#efeff4"></load-more>
+        <div v-else class="center_content font_1_2">
+          <goodslist :goodsItem="goodsItem" :enter_type="1"></goodslist>
         </div>
-        <div class="flex_tab f_flex f_ac f_vc" style="color:#10aeff">
-          <div style="padding:5px" @click="showActionsheet">{{current_sort}}</div>
-          <i class="arrow"></i>
-        </div>
-      </div>
-      <div class="center_content font_1_2">
-        <goodslist :goodsItem="goodsItem"></goodslist>
-      </div>
-    </Scroller>
+      </Scroller>
+    </div>
+    <!--<search style="position:fixed;top:0;z-index:1" @result-click="resultClick" @on-change="getResult" :results="results" v-model="value" position="fixed" auto-scroll-to-top top="0" @on-focus="onFocus" @on-cancel="onCancel"></search>-->
     <actionsheet v-model="show_sort" :menus="sort" @on-click-menu="click_sort"></actionsheet>
     <actionsheet v-model="show_rack" :menus="rack" @on-click-menu="click_rack"></actionsheet>
   </div>
 </template>
 
 <script>
-  import { Swiper,Search,Selector, Group,Actionsheet} from 'vux'
+  import { Swiper,Search,Selector, Group,Actionsheet,SwiperItem,LoadMore} from 'vux'
   import goodslist from './goods_list.vue'
   import Scroller from '@/components/scroller_me/scroller';
-  import Loading from '@/components/loading/dataLoading'
-
-  const baseList = [{
-    url: 'javascript:',
-    img: 'http://pic.qiantucdn.com/58pic/14/59/28/74A58PICIrd_1024.jpg',
-    title: ''
-  }, {
-    url: 'javascript:',
-    img: 'http://pic.qiantucdn.com/58pic/23/12/64/92G58PIC93T_1024.jpg',
-    title: ''
-  }, {
-    url: 'javascript:',
-    img: 'http://pic.qiantucdn.com/58pic/25/94/22/94558PICxJ3_1024.jpg',
-    title: ''
-  }];
-
-  const goodList=[
-    {
-      goods_id:1,
-      img:"http://pic.qiantucdn.com/58pic/25/94/22/94558PICxJ3_1024.jpg",
-      name:"这是一颗小星星",
-      price:1500,
-      sale_num:200
-    },{
-      goods_id:2,
-      img:"http://pic.qiantucdn.com/58pic/25/94/22/94558PICxJ3_1024.jpg",
-      name:"这是一颗小星星",
-      price:1500,
-      sale_num:200
-    },{
-      goods_id:3,
-      img:"http://pic.qiantucdn.com/58pic/25/94/22/94558PICxJ3_1024.jpg",
-      name:"这是一颗小星星",
-      price:1500,
-      sale_num:200
-    }
-  ];
-  const goodsItem=goodList.map((item, index) => ({
-    goods_id: item.goods_id,
-    img: item.img,
-    name: item.name,
-    price: item.price,
-    sale_num: item.sale_num,
-  }));
-  const urlList = baseList.map((item, index) => ({
-    url: 'http://m.baidu.com',
-    img: item.img,
-    title: `(图片可点击)${item.title}`
-  }));
+  import Loading from '@/components/loading/dataLoading';
+  import {setTitle} from '@/common/js/common';
 
   export default {
     data () {
       return {
         loading:true,
-        demo06_list: urlList,//轮播图
+        demo06_list: [],//轮播图
         demo06_index: 0,
-        results: [],//搜索内容
-        value: 'test',
-        goodsItem:goodsItem,//商品列表
+        value2: '',
+        goodsItem:[],//商品列表
         current_sort:'默认',
         sort:[],
         show_sort:false,
@@ -100,11 +57,17 @@
       }
     },
     components: {
-      Swiper,Search,goodslist,Selector, Group,Actionsheet,Scroller,Loading
+      Swiper,Search,goodslist,Selector, Group,Actionsheet,Scroller,Loading,SwiperItem,LoadMore
     },
     mounted(){
-      this.setTitle("商品首页");
+      setTitle("商品首页");
       this.getlist();
+      this.getSwiper();
+    },
+    computed:{
+      swiper_height(){
+        return (document.body.clientWidth)/75*31+"px"
+      }
     },
     methods: {
       getlist(){
@@ -114,86 +77,108 @@
             "pageno":this.pageno,
             "pagesize":this.pagesize,
             "sort":this.current_sort_key,
-            "rack":this.current_rack_key
+            "rack":this.current_rack_key,
+            "searchdata":this.value2
           }
         };
-        this.$http.post(service_url+'/o2o/shop/wx/indexinfo.do',senddata).then( (data)=> {
-          /*if(mark){
-           let goodsList = data.body.fields.goodsList;
-           for(let i =0;i<goodsList.length;i++){
-           self.goodsItem.push(goodsList[i]);
+        if(service_url){
+          this.$http.post(service_url+'/o2o/shop/wx/indexinfo.do',senddata).then( (data)=> {
+            /*if(mark){
+             let goodsList = data.body.fields.goodsList;
+             for(let i =0;i<goodsList.length;i++){
+             self.goodsItem.push(goodsList[i]);
+             }
+
+             }else{
+             self.goodsItem=data.body.fields.goodsList;
+             }*/
+            self.totalpage=data.body.totalpage;
+//            console.log(self.totalpage);
+            if(self.totalpage===1||self.totalpage===0){
+              this.$el.querySelector('.load-more').style.display = 'none';
+            }else{
+              this.$el.querySelector('.load-more').style.display = 'block';
+            }
+            self.goodsItem=data.body.fields.goodsList;
+
+            let arr_sort=data.body.fields.sort;
+            let json_sort={};
+            for(var i=0;i<arr_sort.length;i++)
+            {
+              json_sort[arr_sort[i].key]=arr_sort[i].value
+            }
+            self.sort=json_sort;
+
+            let arr_rack=data.body.fields.rack;
+            let json_rack={};
+            for(var j=0;j<arr_rack.length;j++)
+            {
+              json_rack[arr_rack[j].key]=arr_rack[j].value
+            }
+            self.rack=json_rack;
+
+          },()=>{
+            console.log(2);
+          });
+        }else{
+          this.$http.get('/api/goodsIndex').then((data) => {
+           self.totalpage=data.body.data.totalpage;
+//           self.totalpage=0;
+            if(self.totalpage===1||self.totalpage===0){
+              this.$el.querySelector('.load-more').style.display = 'none';
+            }else{
+              this.$el.querySelector('.load-more').style.display = 'block';
+            }
+           self.goodsItem=data.body.data.fields.goodsList;
+           let arr_sort=data.body.data.fields.sort;
+           let json_sort={};
+           for(let i=0;i<arr_sort.length;i++)
+           {
+           json_sort[arr_sort[i].key]=arr_sort[i].value
            }
+           self.sort=json_sort;
 
-           }else{
-           self.goodsItem=data.body.fields.goodsList;
-           }*/
-          self.totalpage=data.body.totalpage;
-          if(self.totalpage===1){
-            this.$el.querySelector('.load-more').style.display = 'none';
+           let arr_rack=data.body.data.fields.rack;
+           let json_rack={};
+           for(let j=0;j<arr_rack.length;j++)
+           {
+           json_rack[arr_rack[j].key]=arr_rack[j].value
+           }
+           self.rack=json_rack;
+
+           }, () => {
+           console.log(2);
+           });
+        }
+        document.getElementById("index_loading").style.display="none";
+      },
+      getSwiper(){
+          if(service_url){
+            this.$http.get(service_url+"/o2o/notice/wx/newsIndex?ntype=2&sum=5&itemid=10").then((data)=>{
+              this.demo06_list = data.body.data;
+              /*for(let i in newsIndex){
+                this.demo06_list.push(newsIndex[i].picture);
+              }*/
+            })
           }else{
-            this.$el.querySelector('.load-more').style.display = 'block';
+            this.$http.get("/api/newsIndex").then((data)=>{
+              this.demo06_list=data.body.data.data;
+            })
           }
-          self.goodsItem=data.body.fields.goodsList;
-
-          let arr_sort=data.body.fields.sort;
-          let json_sort={};
-          for(var i=0;i<arr_sort.length;i++)
-          {
-            json_sort[arr_sort[i].key]=arr_sort[i].value
-          }
-          self.sort=json_sort;
-
-          let arr_rack=data.body.fields.rack;
-          let json_rack={};
-          for(var j=0;j<arr_rack.length;j++)
-          {
-            json_rack[arr_rack[j].key]=arr_rack[j].value
-          }
-          self.rack=json_rack;
-
-        },()=>{
-          console.log(2);
-        });
-
-
-        /*this.$http.get('/api/goodsIndex').then((data) => {
-          self.totalpage=data.body.data.totalpage;
-          self.goodsItem=data.body.data.fields.goodsList;
-          let arr_sort=data.body.data.fields.sort;
-          let json_sort={};
-          for(let i=0;i<arr_sort.length;i++)
-          {
-            json_sort[arr_sort[i].key]=arr_sort[i].value
-          }
-          self.sort=json_sort;
-
-          let arr_rack=data.body.data.fields.rack;
-          let json_rack={};
-          for(let j=0;j<arr_rack.length;j++)
-          {
-            json_rack[arr_rack[j].key]=arr_rack[j].value
-          }
-          self.rack=json_rack;
-
-         }, () => {
-         console.log(2);
-         });*/
-        this.loading=false;
       },
       demo06_onIndexChange (index) {
         this.demo06_index = index
       },
-      resultClick (item) {
-        window.alert('you click the result item: ' + JSON.stringify(item))
-      },
-      getResult (val) {
-        this.results = val ? getResult(this.value) : []
+      onSubmit (val) {
+        this.value2=val;
+        this.getlist();
       },
       onFocus () {
         console.log('on focus')
       },
       onCancel () {
-        console.log('on cancel')
+        this.value2="";
+        this.getlist();
       },
       showActionsheet () {
         this.show_sort=true;
@@ -231,7 +216,8 @@
             "pageno":this.pageno,
             "pagesize":this.pagesize,
             "sort":this.current_sort_key,
-            "rack":this.current_rack_key
+            "rack":this.current_rack_key,
+            "searchdata":this.value2
           }
         };
         const self = this;
@@ -239,54 +225,48 @@
           this.$el.querySelector('.load-more').style.display = 'none';
           return;
         }else{
-          this.$http.post(service_url+'/o2o/shop/wx/indexinfo.do',senddata).then( (data)=> {
-            self.totalpage=data.body.totalpage;
-            let goodsList = data.body.fields.goodsList;
-            for(let i =0;i<goodsList.length;i++){
-              self.goodsItem.push(goodsList[i]);
+            if(service_url){
+              this.$http.post(service_url+'/o2o/shop/wx/indexinfo.do',senddata).then( (data)=> {
+                self.totalpage=data.body.totalpage;
+                let goodsList = data.body.fields.goodsList;
+                for(let i =0;i<goodsList.length;i++){
+                  self.goodsItem.push(goodsList[i]);
+                }
+                done();
+              })
+            }else{
+              this.$http.get('/api/goodsIndex').then((data) => {
+               self.totalpage = data.body.data.totalpage;
+               let goodsList = data.body.data.fields.goodsList;
+               for(let i =0;i<goodsList.length;i++){
+               self.goodsItem.push(goodsList[i]);
+               }
+                done();
+               })
             }
-            done();
-          })
-          /*this.$http.get('/api/goodsIndex').then((data) => {
-            self.totalpage = data.body.data.totalpage;
-            let goodsList = data.body.data.fields.goodsList;
-            for(let i =0;i<goodsList.length;i++){
-              self.goodsItem.push(goodsList[i]);
-            }
-          })*/
+
+
         }
       },
       onRefresh(done) {
         this.pageno=0;
         console.log("onRefresh")
-        this.getlist();
+//        this.getlist();
 
         done() // call done
       },
-      setTitle(t){
-        document.title = t;
-        var i = document.createElement('iframe');
-        i.src = '//m.baidu.com/favicon.ico';
-        i.style.display = 'none';
-        i.onload = function() {
-          setTimeout(function(){
-            i.remove();
-          }, 9)
-        };
-        document.body.appendChild(i);
+      go_link(url,id){
+        if(service_url){
+          this.$http.get(service_url+"/o2o/notice/wx/gclick?nid="+id).then(data=>{
+            if(data.body.statusCode==="ok"){
+              window.location.href=url;
+            }
+          })
+        }else{
+          window.location.href=url;
+        }
       }
     },
-
-  }
-  function getResult (val) {
-    let rs = []
-    for (let i = 0; i < 8; i++) {
-      rs.push({
-        title: `${val} result: ${i + 1} `,
-        other: i
-      })
-    }
-    return rs
   }
 </script>
 

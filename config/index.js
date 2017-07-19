@@ -12,7 +12,7 @@ module.exports = {
 
     //本地
     assetsSubDirectory: './static',
-    assetsPublicPath: '/',
+    assetsPublicPath: './',
     productionSourceMap: true,
     // Gzip off by default as many popular static hosts such as
     // Surge or Netlify already gzip all static assets for you.
